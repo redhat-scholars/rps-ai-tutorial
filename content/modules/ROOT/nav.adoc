@@ -10,10 +10,10 @@
 
 * Workshop Overview
 ** xref:index.adoc[Intro] 
-** xref:setup.adoc[Setup]
+** xref:setup.adoc[Environment Setup]
 
-* Setup and Model Development
-** xref:module-02.adoc#openshift-ai-setup[OpenShift AI Setup] 
+* Project Setup
+** xref:project-setup.adoc[OpenShift AI] 
 ** xref:module-02.adoc#model-development-testing[Model Development and Testing]
 
 * Model Serving and Deployment

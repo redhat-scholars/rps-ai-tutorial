@@ -1,0 +1,146 @@
+# Setting up the Data Science Project
+
+Let's kick off this workshop by accessing our instance of OpenShift AI and creating a new *Data Science Project*. This is a logical grouping that will contain all the assets related to our data science work, such as notebooks, data connections, model serving, and more, all in one place. Let's setup our project and start exploring the capabilities of OpenShift AI!
+
+TIP: These technologies are based on open-source projects that Red Hat contributes to, such as link:https://jupyter.org/[Jupyter] for notebooks, link:https://www.kubeflow.org/[Kubeflow] for machine learning pipelines, and link:https://www.knative.dev/[Knative] for serverless model serving, just to name a few!
+
+## Accessing OpenShift AI
+
+To begin, select *Red Hat OpenShift AI* from the OpenShift Web Console application launcher, or by clicking on the following link: https://rhods-dashboard-redhat-ods-applications.{openshift_cluster_ingress_domain}[*OpenShift AI Dashboard*].
+
+image::openshift-ai-launcher.png[OpenShift AI Launcher]
+
+## Exploring OpenShift AI
+
+Here's your launchpad to building and operationalizing AI/ML models on OpenShift. Let's briefly explore the different sections of the OpenShift AI Dashboard before we create our project.
+
+image::openshift-ai-dashboard-view.png[OpenShift AI Dashboard]
+
+### Applications
+
+The applications section provides access to enabled applications that extend the capabilities of OpenShift AI such as Jupyter Hub link:https://jupyter.org/[Jupyter Hub,role='params-link',window='_blank'], Anaconda link:https://www.anaconda.com/[Anaconda,role='params-link',window='_blank'], and Starburst link:https://www.starburst.io/[Starburst,role='params-link',window='_blank'].
+
+image::openshift-ai-applications.png[OpenShift AI Applications]
+
+### Data Science Projects
+
+This area is where you can create and manage your data science projects. Today, we'll be creating and organizing our project here, but you may have multiple projects for different teams or use cases.
+
+image::openshift-ai-projects.png[OpenShift AI Projects] 
+
+### Data Science Pipelines
+
+This section is where you can create and manage your machine learning pipelines. These pipelines can be used to automate the end-to-end machine learning workflow, from data preparation to model training and deployment. Based on Kubeflow and Tekton, these pipelines are portable and scalable.
+
+image::openshift-ai-pipelines.png[OpenShift AI Pipelines]
+
+### Model Serving
+
+This area is where you can deploy and manage your machine learning models. Based on Knative, this serverless framework allows you to scale your models based on demand, and provides a consistent way to deploy and manage your models.
+
+image::openshift-ai-model-serving.png[OpenShift AI Model Serving]
+
+### Resources
+
+This section provides access to resources such as documentation, tutorials, and more to help you get started with OpenShift AI. From data analysis to model deployment and monitoring, you'll find everything you need to build and operationalize AI/ML models on OpenShift.
+
+image::openshift-ai-resources.png[OpenShift AI Resources]
+
+## Setting up a Data Science Project
+
+Fantastic, we understand the basics of OpenShift AI and are ready to create our first data science project. Head to the *Data Science Projects* section and click on the *Create data science project* button.
+
+image::openshift-ai-create-project.png[Create Data Science Project]
+
+For the project name, enter `game-{user}` and click on the *Create* button. Note that this screenshot will be different from the one you create.
+
+image::openshift-ai-create-project-form.png[Create Data Science Project Form]
+
+Welcome to your first data science project! This is where you'll be spending most of your time in this workshop, building and operationalizing your AI/ML models. Let's start by creating a data connection where we'll be loading our data from.
+
+### Creating a Data Connection
+
+We've deployed an instance of Minio on OpenShift, which is an object storage server compatible with Amazon S3. We'll use Minio to store our data and create a connection to it in our project.
+
+Scroll down to the *Data Connections* tab and then click on the *Add data connection* button.
+
+image::openshift-ai-create-connection.png[Create Data Connection]
+
+Here's the details to enter in the form, specific to our cluster. Please copy & paste from the right side of the table, and when ready, click on the *Create* button.
+
+[cols="1,1"] 
+|===
+| *Name*
+| Shared Minio
+| *Access Key*
+| minio
+| *Secret Key*
+| minio123
+| *Endpoint*
+| http://minio.ic-shared-minio.svc.cluster.local:9000
+| *Region*
+| none
+| *Bucket*
+| {user}
+|===
+
+image::openshift-ai-create-connection-form.png[Create Data Connection Form]
+
+Great! We've successfully created a data connection to Minio. Next, let's configure a pipeline server to run our machine learning pipelines.
+
+### Configuring a Pipeline Server
+
+Scroll down to the *Pipeline* tab and click on the *Configure pipeline server* button.
+
+image::openshift-ai-configure-pipeline-server.png[Configure Pipeline Server]
+
+To select the data connection we created earlier, `Shared Minio`, select the Key dropdown and then click on the *Shared Minio* credentials.
+
+image::openshift-ai-configure-pipeline-server-form.png[Configure Pipeline Server Form]
+
+When the pipeline server is ready, processing wheel will stop spinning. This means we're all set to run our machine learning pipelines, which we'll be able to see when we run them from our Notebooks.
+
+image::openshift-ai-pipeline-server-ready.png[Pipeline Server Ready]
+
+### Creating a Workbench for Jupyter Notebooks
+
+Speaking of notebooks, let's create a workbench where we can run our Jupyter Notebooks. Scroll up to the *Workbench* tab and click on the *Create workbench* button.
+
+image::openshift-ai-create-workbench.png[Create Workbench]
+
+For the workbench name, you can customize it, for ex. `My Workbench`, and select the *Image selection* to *PyTorch*. All else can remain as default, and then click on the *Create workbench* button.
+
+image::openshift-ai-create-workbench-form.png[Create Workbench Form]
+
+You'll need to wait just a minute or two for the workbench to be created, but once it's ready, click the *Open* button to access the Jupyter Notebook environment.
+
+NOTE: During this process, the notebook image is being pulled from the container registry, and pods are being created to run the notebook server.
+
+image::openshift-ai-workbench-ready.png[Workbench Ready]
+
+You'll authenticate with your OpenShift user credentials, so hit *Allow selected permissions* to proceed, and finally land at the Jupyter Notebook environment.
+
+image::openshift-ai-jupyter-notebook.png[Jupyter Notebook]
+
+### Clone the project repository
+
+We have a repository with the code and data for this workshop. Let's clone it into our Jupyter Notebook environment. In the Jupyter Notebook environment, navigate to the *Git UI* in the left sidebar, and then click on the *Clone a Repository* button. 
+
+image::openshift-ai-jupyter-notebook-git-ui.png[Jupyter Notebook Git UI]
+
+Enter the repository URL from Gitea.
+
+[source,sh,role=execute]
+----
+{gitea_console_url}/{user}/rps-game
+----
+
+image::openshift-ai-jupyter-notebook-clone-repo.png[Jupyter Notebook Clone Repository]
+
+Click on the *Clone* button to clone the repository, and then navigate to the `rps-game/roshambo-notebooks` folder to access the notebooks we'll be working with today.
+
+image::openshift-ai-jupyter-notebook-repo.png[Jupyter Notebook Repository]
+
+## Summary
+
+We've successfully created a data science project, connected to Minio, configured a pipeline server, and created a workbench to run our Jupyter Notebooks. We've also cloned the project repository into our Jupyter Notebook environment. We're all set to start building and operationalizing our AI/ML models on OpenShift AI! Let's move on to the next section to start exploring the data and building our models.
