@@ -1,3 +1,4 @@
+////
 * xref:module-01.adoc[1. RPM Native Container]
 ** xref:module-01.adoc#repositories[Repositories]
 ** xref:module-01.adoc#software[Software]
@@ -5,3 +6,24 @@
 * xref:module-02.adoc[2. GitHub Sourced Container]
 ** xref:module-02.adoc#prerequisites[Install Prerequisites]
 ** xref:module-02.adoc#container[Enable Container]
+////
+
+* xref:module-01.adoc[1. Introduction] 
+** xref:module-01.adoc#workshop-overview[Workshop Overview] 
+** xref:module-01.adoc#roshambo-game[Roshambo Game]
+
+* xref:module-02.adoc[2. Setup and Model Development] 
+** xref:module-02.adoc#openshift-ai-setup[OpenShift AI Setup] 
+** xref:module-02.adoc#model-development-testing[Model Development and Testing]
+
+* xref:module-03.adoc[3. Model Serving and Deployment] 
+** xref:module-03.adoc#model-server-creation[Model Server Creation] 
+** xref:module-03.adoc#ai-proxy-game-deployment[AI Proxy and Game Deployment]
+
+* xref:module-04.adoc[4. Game Interaction] 
+** xref:module-04.adoc#playing-without-camera[Playing without Camera] 
+** xref:module-04.adoc#enabling-camera-feature[Enabling Camera Feature] 
+** xref:module-04.adoc#multiplayer-game[Multiplayer Game]
+
+* xref:module-05.adoc[5. Conclusion] 
+** xref:module-05.adoc#recap-resources[Recap and Resources]

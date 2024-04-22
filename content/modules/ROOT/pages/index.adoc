@@ -1,43 +1,43 @@
-= {lab_name}
+# Welcome to the Workshop!
 
-The `lab_name` var, known as an asciidoc attribute, above was set in `./content/antora.yml` and can be used to set the lab_name or title of your content.
-You are both free to change its value and if you prefer to use a different var name, you can change the value of `lab_name`, for example to `title` in `./content/antora.yml` and then reference it in your content as `\{title}`. +
+Welcome to the *Rock, Scissors, Paper: An AI-powered Interactive Game with OpenShift AI and OpenShift GitOps* workshop. We're glad to have you here with us at https://www.redhat.com/en/summit[*Red Hat Summit*] 2024!
 
-image::rhel-logo-black.jpg[rhel-logo-black,55%,55%]
+## About this lab
 
-== Variables
+This workshop provides you with your own link:https://www.redhat.com/en/technologies/cloud-computing/openshift[*Red Hat OpenShift*,window='_blank'] cluster and a series of exercises that teach you how to use OpenShift AI and OpenShift GitOps for an AI-powered interactive game called RoShambo. You will learn how to use link:https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-ai[*OpenShift AI*,window='_blank'] to automate model construction through data science pipelines and deploy models via the model server. You will also learn how to use link:https://www.redhat.com/en/technologies/cloud-computing/openshift/gitops[*OpenShift GitOps*,window='_blank'] to handle the deployment of models and applications using GitOps principles. 
 
-Other vars can also be set there, such as `ssh_user` and `ssh_password`, and referenced inline in the lab content by using the `\{foo}` syntax.
+We'll be deploying a multi-component application which includes a frontend built with link:https://reactjs.org[*React*,window='_blank'], a backend using link:https://quarkus.io[*Quarkus*,window='_blank'], and an AI model built and trained with link:https://pytorch.org[*PyTorch*,window='_blank'].
 
-This is another var, or asciidoc attribute, from `./content/antora.yml` {my_var}
+image::roshambo-architecture.png[Architecture]
 
-== Writing your lab
+## Introduction
 
-Whatever type of content you are writing we'll refer to your *content* as "your lab" in this document.
+The demo application in this workshop is an interactive game called RoShambo, which allows users to play the classic game of Rock, Scissors, Paper against an AI-powered opponent. You will work with two main components: the AI model and the game application.
 
-=== Lab structure
+image::roshambo-game.png[RoShambo Game]
 
-Wether you are writing a lab
+By the end of this lab, you will have a better understanding of how to deploy AI models using OpenShift AI, automate model construction with data science pipelines, and leverage OpenShift GitOps for deploying models and applications. This workshop includes the following steps:
 
-* First, we will build a monolithic application already compiled as RPM packages and put it into a container. This will allow us to deploy the application, copy it between machines, and update it separately from the operating system. This process affords us a portable and easily maintained component instead of tightly coupling the application with your operating system maintenance.
+- Set up an OpenShift cluster and access OpenShift AI.
+- Explore the RoShambo game model and automate its construction using data science pipelines.
+- Deploy the model using the model server in OpenShift AI.
+- Set up a GitOps repository and configure application deployment manifests.
+- Deploy the RoShambo application using GitOps principles.
+- Integrate the AI model with the RoShambo application and test the AI-powered game.
+- Explore MLOps automation with OpenShift AI, Pipelines, and GitOps.
 
-* In closing we will build a second container on a different operating system version that makes an application not packaged into RPMs. This will be similar to a web application deployment, positioning the correct files at the right locations. To do this, we will pull a project from GitHub and position the component files within our container image. The purpose of this is to achieve a portable application container that can deploy on several different versions of Red Hat Enterprise Linux. This also provides the benefit of decoupling your application maintenance, which would all happen by building new containers versus operating system maintenance. The container is no longer reliant on the operating system installed on the machine where the application is deployed.
+== What is OpenShift AI?
 
-. Now let's examine this cluster a bit more by describing the cluster (the `$GUID` environment variable is already set for you so you can immediately describe your individual cluster):
-+
-[source,sh,role=execute]
-----
-podman ps
-----
-+
-.Sample Output
-[source,texinfo,subs="attributes"]
-----
-CONTAINER ID  IMAGE                        COMMAND           CREATED      STATUS      PORTS                 NAMES
-2dcfee9e50c4  docker.io/library/httpd:2.4  httpd-foreground  3 hours ago  Up 3 hours  0.0.0.0:8080->80/tcp  showroom-httpd
-----
+link:https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-data-science[OpenShift AI,window='_blank'] (formerly known as Red Hat OpenShift Data Science) is a managed cloud service for data scientists and developers of intelligent applications. It provides a fully supported environment in which to rapidly develop, train, test, and deploy machine learning (ML) models and intelligent applications in the public cloud.
 
-=== Lab Access
+image:openshift-ai-dashboard.png[]
 
-The terminal window to your right is *already* logged into the lab environment as the `{ssh_user}` user via `ssh`. 
-All steps of this lab are to be completed as the `{ssh_user}` user.
+== What is OpenShift GitOps?
+
+link:https://www.redhat.com/en/technologies/cloud-computing/openshift/gitops[OpenShift GitOps,window='_blank'] is a declarative way to implement continuous deployment for cloud-native applications using Git as the single source of truth. It enables you to manage and automate complex deployments, saving time during deployment and release cycles. You can use OpenShift GitOps to create repeatable processes for managing OpenShift clusters and applications across multi-cluster Kubernetes environments.
+
+image:openshift-gitops-graphic.png[]
+
+## Next Steps
+
+Ready to get started with the lab? Let's begin by setting up the lab environment and exploring OpenShift AI.
