@@ -118,11 +118,11 @@ NOTE: During this process, the notebook image is being pulled from the container
 
 image::openshift-ai-workbench-ready.png[Workbench Ready]
 
-You'll authenticate with your OpenShift user credentials, so hit *Allow selected permissions* to proceed, and finally land at the Jupyter Notebook environment.
+You'll authenticate with your OpenShift user credentials ({user}, {password}), hit *Allow selected permissions* after to proceed, and finally land at the Jupyter Notebook environment.
 
 image::openshift-ai-jupyter-notebook.png[Jupyter Notebook]
 
-### Clone the project repository
+### Cloning the project repository
 
 We have a repository with the code and data for this workshop. Let's clone it into our Jupyter Notebook environment. In the Jupyter Notebook environment, navigate to the *Git UI* in the left sidebar, and then click on the *Clone a Repository* button. 
 
@@ -143,4 +143,4 @@ image::openshift-ai-jupyter-notebook-repo.png[Jupyter Notebook Repository]
 
 ## Summary
 
-We've successfully created a data science project, connected to Minio, configured a pipeline server, and created a workbench to run our Jupyter Notebooks. We've also cloned the project repository into our Jupyter Notebook environment. We're all set to start building and operationalizing our AI/ML models on OpenShift AI! Let's move on to the next section to start exploring the data and building our models.
+We've successfully created a data science project, connected to Minio, configured a pipeline server, and created a workbench to run our Jupyter Notebooks. We've also cloned the project repository into our Jupyter Notebook environment. Let's move on to the next section to start learn about the model we'll be using for the Rock-Paper-Scissors game.
