@@ -37,8 +37,6 @@ You'll be prompted to log in with your credentials, here they are as a reference
 - Username: `{user}`
 - Password: `{password}`
 
-image::openshift-login.png[OpenShift Page Login]
-
 Once you're logged in, you'll be at the OpenShift dashboard.
 
 image::openshift-dashboard.png[OpenShift Dashboard]
@@ -64,11 +62,7 @@ Let's look at *Argo CD*, a declarative, GitOps continuous delivery tool for Kube
 
 image::argocd-button.png[Argo CD Route Button]
 
-You'll be prompted to log in to Argo CD, and you can use the OpenShift login button to do so.
-
-image::argocd-login.png[Argo CD Login]
-
-As a reference, here are your credentials:
+You'll be prompted to log in to Argo CD, and you can use the OpenShift login button to do so. As a reference, here are your credentials:
 
 - Username: `{user}`
 - Password: `{password}`
@@ -92,7 +86,7 @@ Once logged in, you can access the following source repositories:
 
 We also have a repository that contains the ArgoCD application manifests.
 
-- link:{gitea_console_url}/{user}/rps-game-manifests[RPS Game,role='params-link',window='_blank']
+- link:{gitea_console_url}/{user}/rps-game-manifests[RPS Game Manifests,role='params-link',window='_blank']
 
 ## Next steps
 
