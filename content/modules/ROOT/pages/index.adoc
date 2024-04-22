@@ -16,19 +16,21 @@ The demo application in this workshop is an interactive game called RoShambo, wh
 
 image::roshambo-game.png[RoShambo Game]
 
-By the end of this lab, you will have a better understanding of how to deploy AI models using OpenShift AI, automate model construction with data science pipelines, and leverage OpenShift GitOps for deploying models and applications. This workshop includes the following steps:
+By the end of this lab, you will have a better understanding of how to deploy AI models using OpenShift AI, automate model construction with data science pipelines, and leverage OpenShift GitOps for deploying models and applications. The workshop includes the following steps:
 
-- Set up an OpenShift cluster and access OpenShift AI.
-- Explore the RoShambo game model and automate its construction using data science pipelines.
-- Deploy the model using the model server in OpenShift AI.
-- Set up a GitOps repository and configure application deployment manifests.
-- Deploy the RoShambo application using GitOps principles.
-- Integrate the AI model with the RoShambo application and test the AI-powered game.
+- Work with an existing OpenShift cluster and access OpenShift AI
+- Create a Data Science project and set up a workbench
+- Work within Jupyter Hub to work with an existing PyTorch project and explore the various notebooks
+- Run a data science pipeline to train the AI model
+- Create a model server and test the AI model
+- Deploy the AI proxy and game application using OpenShift GitOps
+- Interact with the game, both with and without camera input
+- Enable the multiplayer feature and play together with other workshop participants
 - Explore MLOps automation with OpenShift AI, Pipelines, and GitOps.
 
 == What is OpenShift AI?
 
-link:https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-data-science[OpenShift AI,window='_blank'] (formerly known as Red Hat OpenShift Data Science) is a managed cloud service for data scientists and developers of intelligent applications. It provides a fully supported environment in which to rapidly develop, train, test, and deploy machine learning (ML) models and intelligent applications in the public cloud.
+link:https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-ai[OpenShift AI,window='_blank'] is a managed cloud service for data scientists and developers of intelligent applications. It provides a fully supported environment in which to rapidly develop, train, test, and deploy machine learning (ML) models and intelligent applications in the public cloud.
 
 image:openshift-ai-dashboard.png[]
 
@@ -40,4 +42,4 @@ image:openshift-gitops-graphic.png[]
 
 ## Next Steps
 
-Ready to get started with the lab? Let's begin by setting up the lab environment and exploring OpenShift AI.
+Ready to get started with the lab? Let's begin by viewing the up the workshop environment and exploring OpenShift AI.

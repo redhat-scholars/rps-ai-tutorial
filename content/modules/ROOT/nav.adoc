@@ -8,22 +8,22 @@
 ** xref:module-02.adoc#container[Enable Container]
 ////
 
-* 1. Workshop Overview
+* Workshop Overview
 ** xref:index.adoc[Intro] 
 ** xref:setup.adoc[Setup]
 
-* 2. Setup and Model Development
+* Setup and Model Development
 ** xref:module-02.adoc#openshift-ai-setup[OpenShift AI Setup] 
 ** xref:module-02.adoc#model-development-testing[Model Development and Testing]
 
-* 3. Model Serving and Deployment
+* Model Serving and Deployment
 ** xref:module-03.adoc#model-server-creation[Model Server Creation] 
 ** xref:module-03.adoc#ai-proxy-game-deployment[AI Proxy and Game Deployment]
 
-* 4. Game Interaction
+* Game Interaction
 ** xref:module-04.adoc#playing-without-camera[Playing without Camera] 
 ** xref:module-04.adoc#enabling-camera-feature[Enabling Camera Feature] 
 ** xref:module-04.adoc#multiplayer-game[Multiplayer Game]
 
-* 5. Conclusion
+* Conclusion
 ** xref:module-05.adoc#recap-resources[Recap and Resources]
