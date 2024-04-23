@@ -76,7 +76,7 @@ Please copy & paste from the right side of the table, and when ready, click on t
 
 image::openshift-ai-model-deployed.png[Model Deployed]
 
-If the model is successfully deployed you will see its status as green after 15 to 30 seconds. This inference server is now exposed in the cluster we're working on.
+If the model is successfully deployed you will see its status as green after a minute or two. This inference server is now exposed in the cluster we're working on.
 
 image::openshift-ai-model-deployed-status.png[Model Deployed Status]
 

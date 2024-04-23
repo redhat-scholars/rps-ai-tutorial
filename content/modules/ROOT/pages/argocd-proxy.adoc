@@ -6,7 +6,7 @@ We'll create an Argo CD instance in the user namespace, configure applications f
 
 ## Initializing Argo CD
 
-First, we'll install Argo CD in the user namespace. In the *Import Yaml* or *+* button from the top-right corner, copy and paste the following YAML to install Argo CD:
+First, we'll install Argo CD in the user namespace. From the `game-{user}` project, click the *Import Yaml* or *+* button from the top-right corner, copy and paste the following YAML to install Argo CD:
 
 [source,sh,role=execute]
 ----
@@ -45,7 +45,7 @@ Once the deployment is complete, you can access the Argo CD web interface by cli
 
 image::openshift-ai-argocd-topology.png[Argo CD Topology]
 
-The Argo CD web interface is protected by OAuth, and you can log in using the OpenShift credentials, and authorize the Argo CD application to access the OpenShift API. Now, you can access the Argo CD web interface and manage the applications.
+The Argo CD web interface is protected by OAuth, and you can log in using the OpenShift credentials (`{user}`, `{password}`), and authorize the Argo CD application to access the OpenShift API. Now, you can access the Argo CD web interface and manage the applications.
 
 image::openshift-ai-argocd-login.png[Argo CD Login]
 
@@ -71,11 +71,15 @@ Next, we'll create an Argo CD application for the AI proxy. The AI proxy applica
 | main
 | *Path*
 | helmai
+| *Cluster URL*
+| https://kubernetes.default.svc
 | *Namespace*
 | game-{user}
 |===
 
 image::openshift-ai-argocd-ai-proxy.png[Argo CD AI Proxy]
+image::openshift-ai-argocd-ai-proxy-2.png[Argo CD AI Proxy]
+image::openshift-ai-argocd-ai-proxy-3.png[Argo CD AI Proxy]
 
 After creating the application, Argo CD will automatically synchronize the application and deploy the AI proxy service in the user namespace. You can view the status of the application, the resources deployed, and the synchronization status in the Argo CD web interface.
 
@@ -83,5 +87,7 @@ image::openshift-ai-argocd-ai-proxy-app.png[Argo CD AI Proxy App]
 
 You can also view this in the *Topology* view, where the AI proxy application is displayed with a Python icon, representing the AI proxy service.
 
-## Creating a new Game application
+## Next Steps
+
+In this section, you learned how to deploy the AI proxy on OpenShift using GitOps principles with Argo CD. You created an Argo CD instance in the user namespace, configured applications for the AI proxy and the game, and managed their deployment using GitOps principles. Let's now test out the functionality of this proxy through Jupyter Notebooks.
 

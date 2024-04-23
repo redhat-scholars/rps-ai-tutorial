@@ -9,12 +9,13 @@ Now, let's explore the validation notebook to understand how the data scientist 
 image::openshift-ai-jupyter-notebook-validation.png[Jupyter Notebook Validation]
 
 Run through the notebook cells one by one to understand the technical details of the model development process:
+
 - The notebook starts by importing the necessary libraries, such as PyTorch, torchvision, and matplotlib, which are essential for model development and visualization.
 - The pre-trained ResNet model is loaded using the `torchvision` function, which provides a powerful starting point for transfer learning.
 - The ResNet model is fine-tuned on the RoShambo dataset using techniques like freezing the base layers, replacing the final fully connected layer, and training with a suitable optimizer and loss function.
 - The trained model's performance is evaluated using metrics such as accuracy, precision, recall, and F1-score, providing insights into its effectiveness in classifying hand gestures.
 
-You'll also see in the `modelmesh` directory there are some examples used to test the model.
+You'll also see in the `modelmesh/images` directory there are some examples used to test the model.
 
 image::openshift-ai-jupyter-notebook-validation-modelmesh.png[Jupyter Notebook Validation ModelMesh]
 
@@ -22,7 +23,7 @@ image::openshift-ai-jupyter-notebook-validation-modelmesh.png[Jupyter Notebook V
 
 With the model developed and validated in the notebook, let's leverage the power of Kubeflow and Tekton to automate the model construction process using a data science pipeline.
 
-Navigate to the `rps-game/pipelines` directory, and open the `pipeline.yaml` file. This file contains the pipeline definition, which orchestrates the steps required to build, train, and validate the RoShambo game model.
+Navigate to the `rps-game/roshambo-notebooks/pipelines` directory, and open the `train.pipeline` file. This file contains an example of the pipeline definition which orchestrates the steps required to build, train, and validate the RoShambo game model.
 
 image::openshift-ai-tekton-pipeline.png[Tekton Pipeline]
 
