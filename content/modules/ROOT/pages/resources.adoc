@@ -1,0 +1,33 @@
+# Conclusion and Resources
+
+Congratulations on completing the "Rock, Scissors, Paper: An AI-powered Interactive Game with OpenShift AI and OpenShift GitOps" lab! Throughout this lab, you've gained hands-on experience with various OpenShift technologies and learned how to develop, deploy, and manage an AI-powered game application.
+
+## Lab Summary
+Let's recap the key points and achievements from this lab:
+
+- You set up an OpenShift AI environment and created a Data Science project.
+- You cloned the RoShambo game repository and explored the validation notebook to understand the AI model.
+- You ran the data science pipeline to automate the model construction process.
+- You deployed the AI model using the Model Server in OpenShift AI and tested its functionality.
+- You deployed the AI proxy and game application using OpenShift GitOps with Argo CD.
+- You played the RoShambo game in different modes, including dummy mode, camera mode, and multiplayer mode.
+- You learned about the technical details and architectures behind each component of the game application.
+
+## Learning Resources
+
+To further expand your knowledge and explore related topics, here are some valuable learning resources:
+
+### OpenShift AI
+
+- link:https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-ai[OpenShift AI Product Page,role='params-link',window='_blank']
+- link:https://ai-on-openshift.io/getting-started/openshift/[AI on OpenShift Examples & Patterns,role='params-link',window='_blank']
+- link:https://developers.redhat.com/products/red-hat-openshift-ai/overview[OpenShift AI Red Hat Developer Page,role='params-link',window='_blank']
+
+###  OpenShift GitOps
+
+- link:https://www.redhat.com/en/technologies/cloud-computing/openshift/gitops[OpenShift GitOps Product Page,role='params-link',window='_blank']
+- link:https://github.com/redhat-developer/gitops-operator/blob/master/docs/OpenShift%20GitOps%20Usage%20Guide.md[OpenShift GitOps Usage Guide,role='params-link',window='_blank']
+
+## Thank You!
+
+These resources will provide you with in-depth knowledge, tutorials, and real-world examples related to OpenShift AI, OpenShift GitOps, Argo CD, AI and machine learning, and game development with AI. We hope you found this lab informative and engaging. Feel free to reach out if you have any questions or feedback. Happy learning and coding!

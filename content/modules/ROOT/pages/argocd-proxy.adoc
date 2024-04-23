@@ -81,6 +81,8 @@ image::openshift-ai-argocd-ai-proxy.png[Argo CD AI Proxy]
 image::openshift-ai-argocd-ai-proxy-2.png[Argo CD AI Proxy]
 image::openshift-ai-argocd-ai-proxy-3.png[Argo CD AI Proxy]
 
+TIP: Helm is a package manager for Kubernetes that allows you to define, install, and manage applications as packages called charts. A Helm chart contains the necessary templates and configuration files to deploy an application in a Kubernetes cluster.
+
 Hit *CREATE* when finished. After creating the application, Argo CD will automatically synchronize the application and deploy the AI proxy service in the user namespace. You can view the status of the application, the resources deployed, and the synchronization status in the Argo CD web interface.
 
 image::openshift-ai-argocd-ai-proxy-app.png[Argo CD AI Proxy App]

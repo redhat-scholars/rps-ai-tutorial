@@ -1,0 +1,68 @@
+# Playing the RoShambo Game
+
+In this section, we'll explore the different ways to play the RoShambo game. We'll start by playing against the computer without the camera feature, then enable the camera feature to play using hand gestures and fully experience the power of our trained AI model making inferences depending on our hand gestures.
+
+## Playing Against the Computer (Dummy Mode)
+
+Firstly, access the game application by navigating to the frontend route URL provided in the OpenShift web console.
+
+image::openshift-ai-game-topology-route.png[AI Game Topology]
+
+The current version of the game does not include the camera feature, so you'll be playing against the computer in a dummy mode. Once the game loads, you'll see the main screen where you can click *Start Game* to select your move (rock, paper, or scissors) by clicking on the corresponding button.
+
+image::ai-game-main-screen.png[AI Game Main Screen]
+
+TIP: If you have a laptop with a camera, you can also play the game directly on your laptop. However, for the best experience, we recommend using a mobile device.
+
+In the waiting lobby, we can now head to the administration backend to start the game. To do this, navigate to the backend route URL provided in the OpenShift web console *Topology*.
+
+image::openshift-ai-game-topology-route-backend.png[AI Game Topology]
+
+You'll be prompted to enter the credentials, which are below, but can also be found in the `application.properties` file in the `roshambo-backend` directory of the project.
+
+- Username: `admin`
+- Password: `ae7cdd2406201487bcce77064b5fe10c`
+
+Once you've logged in, you'll see the administration dashboard where you can start the game by clicking the *New Game* button.
+
+image::ai-game-admin-dashboard.png[AI Game Admin Dashboard]
+
+After starting the game, head back to the frontend and select your move. The computer will also select a move, and the game will display the result when the timer is finished. Generally, we'd give the frontend link to users, and display the administration page on a main screen.
+
+image::ai-game-result-screen.png[AI Game Result Screen]
+
+NOTE: Under the hood, the game application manages the state of the game using a combination of frontend and backend technologies. The frontend, built with React, handles the user interface and user interactions, while the backend, powered by Quarkus, manages the game logic and communicates with the AI proxy.
+
+## Enabling the Camera Feature
+
+To enable the camera feature and play the game using hand gestures, we need to update the game application deployment. First, open the Argo CD web interface and navigate to the game application, and select *APP DETAILS*.
+
+image::openshift-ai-game-argo-cd.png[AI Game Argo CD]
+
+Here, select *PARAMETERS* from the dropdown menu, and hit *EDIT*. Locate the `backend.image` parameter and change its image `tag` to `camera`.
+
+image::openshift-ai-game-argo-cd-parameters.png[AI Game Argo CD Parameters]
+
+Now, save the changes and wait for Argo CD to update the game application deployment.
+
+image::openshift-ai-game-argo-cd-updating.png[AI Game Argo CD Updating]
+
+## Verifying the new Camera feature
+
+Once the deployment is updated, refresh the game application in your web browser. You should now see a prompt requesting access to your device's camera. Allow camera access to proceed.
+
+image::ai-game-camera-access.png[AI Game Camera Access]
+
+The game will now use your device's camera to capture your hand gestures. Make a gesture representing your move (rock, paper, or scissors) in front of the camera.
+
+image::ai-game-camera-gesture.png[AI Game Camera Gesture]
+
+When you make a hand gesture in front of the camera, the game application captures the image using the device's camera API. The captured image is then sent to the backend API as part of the game request, and will determine your move based on the hand gesture.
+
+image::ai-game-camera-result.png[AI Game Camera Result]
+
+The game will then display the AI's move and the result of the game (win, lose, or draw).
+
+## Next Steps
+
+In this section, we explored the different ways to play the RoShambo game. We started by playing against the computer without the camera feature, then enabled the camera feature to play using hand gestures. In the next section, we'll all play together!

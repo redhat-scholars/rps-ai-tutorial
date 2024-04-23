@@ -18,14 +18,13 @@
 ** xref:model-serving.adoc[Model Serving]
 ** xref:validation.adoc[Model Validation]
 
-* GitOps
+* Deploying with GitOps
 ** xref:argocd-proxy.adoc[Deploying the AI Service]
 ** xref:jupyter-test.adoc[Testing the Service]
 ** xref:argocd-game.adoc[Deploying the Game]
 
 * Game Interaction
-** xref:game.adoc[Playing by Default]
-** xref:game-camera.adoc[Playing with the Camera]
+** xref:game.adoc[Playing & Modifying the Game]
 ** xref:multiplayer.adoc[Let's all Play!]
 
 * Conclusion

@@ -1,5 +1,56 @@
 # Deploying the Game Application with Argo CD
 
-In this section, we'll deploy the game application using Argo CD. We'll create a new application in Argo CD, configure it to use the same manifests repository as the AI proxy, and specify the helm path for the game application. 
+In this section, we'll deploy the game application using Argo CD. We'll create a new application in Argo CD, configure it to use the same manifests repository as the AI proxy, and specify the helm path for the game application.
+
+Based on the architecture diagram, our Java backend will use the AI Proxy to communicate to the model, and our frontend will allow users to make choices and send requests to the backend, as well as display the results on an admin page. 
+
+image::roshambo-architecture.png[Architecture]
 
 ## Creating a new AI Game application
+
+Let's return to the Argo CD dashboard and create a new application for the AI Game. Select *+ NEW APP* from the Argo CD web interface, and fill in the following details:
+
+[cols="1,1"] 
+|===
+| *Application Name*
+| rps-game
+| *Project Name*
+| default
+| *Sync Policy*
+| Automatic
+| *Self Heal*
+| Enabled
+| *Repository URL*
+| {gitea_console_url}/{user}/rps-game-manifests.git
+| *Revision*
+| main
+| *Path*
+| helm
+| *Cluster URL*
+| https://kubernetes.default.svc
+| *Namespace*
+| game-{user}
+| *Helm Parameters: backend.ainamespace*
+| game-{user}
+|===
+
+image::openshift-ai-argocd-ai-game.png[Argo CD AI Proxy]
+image::openshift-ai-argocd-ai-game-2.png[Argo CD AI Proxy]
+image::openshift-ai-argocd-ai-game-3.png[Argo CD AI Proxy]
+image::openshift-ai-argocd-ai-game-4.png[Argo CD AI Proxy]
+
+TIP: Argo CD integrates seamlessly with Helm and provides native support for deploying Helm charts. When you create an application with a Helm chart, Argo CD will render the Helm templates, generate the corresponding Kubernetes manifests, and apply them to the cluster.
+
+Click on *CREATE* to create the application. Argo CD will automatically sync the application and deploy the game application to the cluster.
+
+image::openshift-ai-argocd-ai-game-5.png[Argo CD AI Proxy]
+
+## Accessing the AI Game application
+
+To access the deployed game application, go to the OpenShift Web Console and navigate to the project `game-user1`, and check out the *Toplogy* view. You should see the deployed game application with the backend and frontend services.
+
+image::openshift-ai-game-topology.png[AI Game Topology]
+
+## Next Steps
+
+In this section, we learned how to deploy the game application using Argo CD with a Helm chart. We created a new application in Argo CD, specified the manifests repository, and configured the `helm` path and namespace parameter. Now, let's take a look at playing the deployed game!

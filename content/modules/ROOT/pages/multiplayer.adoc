@@ -1,0 +1,23 @@
+# Let's all Play!
+
+The RoShambo game supports a multiplayer mode where players are automatically assigned to teams and compete against each other. Let's see who has the skill, and luck, to win the most games!
+
+NOTE: Swag may be awarded to the best player!
+
+## Accessing the Game
+
+We'll be using an instance of the game, and model, hosted on the `admin` OpenShift user's namespace. To access the game, you'll need to use this following URL:
+
+link:https://openshift-gitops-server-openshift-gitops.{openshift_cluster_ingress_domain}[*RoShambo Multiplayer Link*,role='params-link',window='_blank'].
+
+image::ai-game-multiplayer.png[AI Game Camera Result]
+
+Alternatively, feel free to use this QR code to access the game from your mobile device:
+
+image::ai-game-multiplayer-qr.png[AI Game Camera Result]
+
+Good luck!
+
+## Next Steps
+
+After we finish up, we'll summarize your learning today, and provide some handy resources to help you continue your journey with OpenShiftAI and GitOps.
