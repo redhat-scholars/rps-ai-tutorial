@@ -81,11 +81,13 @@ image::openshift-ai-argocd-ai-proxy.png[Argo CD AI Proxy]
 image::openshift-ai-argocd-ai-proxy-2.png[Argo CD AI Proxy]
 image::openshift-ai-argocd-ai-proxy-3.png[Argo CD AI Proxy]
 
-After creating the application, Argo CD will automatically synchronize the application and deploy the AI proxy service in the user namespace. You can view the status of the application, the resources deployed, and the synchronization status in the Argo CD web interface.
+Hit *CREATE* when finished. After creating the application, Argo CD will automatically synchronize the application and deploy the AI proxy service in the user namespace. You can view the status of the application, the resources deployed, and the synchronization status in the Argo CD web interface.
 
 image::openshift-ai-argocd-ai-proxy-app.png[Argo CD AI Proxy App]
 
 You can also view this in the *Topology* view, where the AI proxy application is displayed with a Python icon, representing the AI proxy service.
+
+image::openshift-ai-argocd-ai-proxy-topology.png[Argo CD AI Proxy Topology]
 
 ## Next Steps
 

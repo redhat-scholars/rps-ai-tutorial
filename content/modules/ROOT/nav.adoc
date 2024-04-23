@@ -24,6 +24,9 @@
 ** xref:argocd-game.adoc[Deploying the Game]
 
 * Game Interaction
+** xref:game.adoc[Playing by Default]
+** xref:game-camera.adoc[Playing with the Camera]
+** xref:multiplayer.adoc[Let's all Play!]
 
 * Conclusion
 ** xref:resources.adoc[Recap and Resources]
