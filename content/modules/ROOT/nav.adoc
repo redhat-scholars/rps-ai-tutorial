@@ -12,20 +12,18 @@
 ** xref:index.adoc[Intro] 
 ** xref:setup.adoc[Environment Setup]
 
-* Getting Started
+* Model Testing & Deployment
 ** xref:project-setup.adoc[OpenShift AI Setup] 
 ** xref:jupyter.adoc[Jupyter Notebook]
 ** xref:model-serving.adoc[Model Serving]
 ** xref:validation.adoc[Model Validation]
 
-* Model Serving and Deployment
-** xref:module-03.adoc#model-server-creation[Model Server Creation] 
-** xref:module-03.adoc#ai-proxy-game-deployment[AI Proxy and Game Deployment]
+* GitOps
+** xref:argocd-proxy.adoc[Deploying the AI Service]
+** xref:argocd.adoc[Testing the Service]
+** xref:argocd-game.adoc[Deploying the Game]
 
 * Game Interaction
-** xref:module-04.adoc#playing-without-camera[Playing without Camera] 
-** xref:module-04.adoc#enabling-camera-feature[Enabling Camera Feature] 
-** xref:module-04.adoc#multiplayer-game[Multiplayer Game]
 
 * Conclusion
-** xref:module-05.adoc#recap-resources[Recap and Resources]
+** xref:resources.adoc[Recap and Resources]

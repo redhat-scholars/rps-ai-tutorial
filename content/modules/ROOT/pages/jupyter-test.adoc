@@ -1,0 +1,19 @@
+# Testing the Inference Service
+
+The AI proxy serves as an intermediary between the game application and the model server or AI service. It acts as a gateway, receiving requests from the game application and forwarding them to the appropriate backend service. Let's test to make sure the AI proxy is working correctly back in our Jupyter notebook.
+
+## Testing the AI Proxy
+
+When the game application requests needs to be sent to the model server, the AI proxy establishes a connection with the model server using the appropriate protocol and forwards the request. The model server processes the request, performs the necessary inference or prediction, and sends the response back to the AI proxy.
+
+In the Juypter Hub environment, open the `rest_test` notebook in the `rps-game/roshambo-notebooks` directory. This notebook contains the code to test the AI proxy via REST protocol.
+
+image::jupyterhub-rest-test-notebook.png[JupyterHub REST Test Notebook]
+
+As the AI proxy route URL is already set in the notebook, simply run the cells to test the AI proxy. The notebook will send a request to the AI proxy, which will forward the request to the model server. The model server will process the request and send the response back to the AI proxy, which will then return the response to the notebook.
+
+image::jupyterhub-rest-test-notebook-results.png[JupyterHub REST Test Notebook Results]
+
+## Next Steps
+
+Now that you have tested the AI proxy, you can proceed to the next section to deploy the game application.
