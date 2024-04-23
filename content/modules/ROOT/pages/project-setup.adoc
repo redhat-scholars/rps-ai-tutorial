@@ -71,7 +71,7 @@ Here's the details to enter in the form, specific to our cluster. Please copy & 
 [cols="1,1"] 
 |===
 | *Name*
-| Shared Minio
+| Shared Minio: Pipelines
 | *Access Key*
 | minio
 | *Secret Key*

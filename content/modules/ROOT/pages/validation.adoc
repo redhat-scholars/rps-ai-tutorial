@@ -1,0 +1,31 @@
+# Validating the Model Deployment
+
+In this section, we'll validate and test our deployed RoShambo game model using the Jupyter Hub environment in OpenShift AI. We'll navigate to the `modelmesh` directory, open the `grpc_test` notebook, and run the steps to ensure that the model can accurately recognize the three hand gesture images provided in the notebook.
+
+## Testing the Model Deployment
+
+In the `rps-game/roshambo-notebooks/modelmesh` directory, you'll find the `grpc_test` notebook. Open this notebook to begin the validation process.
+
+image::openshift-ai-jupyter-notebook-validation.png[Jupyter Notebook Validation]
+
+TIP: The grpc_test notebook utilizes `gRPC` (gRPC Remote Procedure Call) for communication with the deployed model server. gRPC is a high-performance, open-source framework developed by Google that enables efficient and scalable communication between client and server applications.
+
+Let's run the notebook to test the deployed model. Hit the *Play* button in the upper hand area of the notebook to run the cells, firstly, to install the required libraries and then to set some variables for the inference URL and model/input names.
+
+image::openshift-ai-jupyter-notebook-validation-2.png[Jupyter Notebook Validation]
+
+Here, we've got two cells with a preprocessing function (to load the image and return the image data), and an inference function (to send the image data to the model and get the prediction).
+
+image::openshift-ai-jupyter-notebook-validation-3.png[Jupyter Notebook Validation]
+
+TIP: The notebook loads the hand gesture images from a specified directory and preprocesses them to match the input requirements of the model. This involves resizing the images to the expected dimensions and normalizing the pixel values.
+
+Finally, we've got the cell to test the model with the three images provided in the `rps-game/roshambo-notebooks/modelmesh` directory. Run this cell to test the model.
+
+image::openshift-ai-jupyter-notebook-validation-4.png[Jupyter Notebook Validation]
+
+TIP: The preprocessed images are then sent as input data to the model server via gRPC requests. The model server receives the image data, performs the necessary inference calculations using the loaded model, and returns the predicted hand gesture class (rock, paper, or scissors).
+
+## Next Steps
+
+After running the notebook, you should see the model's predictions for the three hand gesture images. If the model correctly identifies the hand gestures, then the deployment is successful. In the next section, we'll deploy the game application using OpenShift GitOps and configure it to communicate with the model server for real-time hand gesture classification.

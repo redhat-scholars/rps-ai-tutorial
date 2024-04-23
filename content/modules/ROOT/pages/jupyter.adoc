@@ -1,0 +1,41 @@
+# Working with Jupyter Notebooks
+
+Jupyter Notebooks are a great way to work with data science and machine learning projects. They allow you to write and execute Python code in a web-based interface, and they also allow you to include text, images, and other content in the same document. This makes them a great tool for data analysis, data visualization, and other tasks that involve working with data. Let's validate the notebook that was used to train the model. We'll also run the data science pipeline to automate the model construction process.
+
+## Validating the training notebook
+
+Now, let's explore the validation notebook to understand how the data scientist created and trained the RoShambo game model. Navigate to the `rps-game/roshambo-notebooks` directory, and open the `validation.ipynb` notebook.  This notebook contains the step-by-step process of model creation, training, and validation.
+
+image::openshift-ai-jupyter-notebook-validation.png[Jupyter Notebook Validation]
+
+Run through the notebook cells one by one to understand the technical details of the model development process:
+- The notebook starts by importing the necessary libraries, such as PyTorch, torchvision, and matplotlib, which are essential for model development and visualization.
+- The pre-trained ResNet model is loaded using the `torchvision` function, which provides a powerful starting point for transfer learning.
+- The ResNet model is fine-tuned on the RoShambo dataset using techniques like freezing the base layers, replacing the final fully connected layer, and training with a suitable optimizer and loss function.
+- The trained model's performance is evaluated using metrics such as accuracy, precision, recall, and F1-score, providing insights into its effectiveness in classifying hand gestures.
+
+You'll also see in the `modelmesh` directory there are some examples used to test the model.
+
+image::openshift-ai-jupyter-notebook-validation-modelmesh.png[Jupyter Notebook Validation ModelMesh]
+
+## Run the Data Science Pipeline
+
+With the model developed and validated in the notebook, let's leverage the power of Kubeflow and Tekton to automate the model construction process using a data science pipeline.
+
+Navigate to the `rps-game/pipelines` directory, and open the `pipeline.yaml` file. This file contains the pipeline definition, which orchestrates the steps required to build, train, and validate the RoShambo game model.
+
+image::openshift-ai-tekton-pipeline.png[Tekton Pipeline]
+
+Here, simply run the pipeline from the *Start* button on the top of the pipeline view, which is using the open source Elyra project.
+
+image::openshift-ai-tekton-pipeline-start.png[Tekton Pipeline Start]
+
+You can easily monitor the pipeline execution progress in the OpenShift AI dashboard, using the 1:1 mapping from Jupyter Hub to OpenShift AI.
+
+image::openshift-ai-tekton-pipeline-progress.png[Tekton Pipeline Progress]
+
+Once the pipeline execution is complete, you can verify the presence of the trained model artifact in the OpenShift AI dashboard. The model artifact represents the final trained model that can be used for serving and inference. By running the data science pipeline, you automate the model construction process, ensuring reproducibility and enabling seamless integration with the overall ML workflow.
+
+## Next Steps
+
+With our model developed and trained, we're now ready to serve it using the Model Server in OpenShift AI. In the next section, we'll create a Model Server and test the served model.

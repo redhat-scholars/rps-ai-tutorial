@@ -12,9 +12,11 @@
 ** xref:index.adoc[Intro] 
 ** xref:setup.adoc[Environment Setup]
 
-* Project Setup
-** xref:project-setup.adoc[OpenShift AI] 
-** xref:module-02.adoc#model-development-testing[Model Development and Testing]
+* Getting Started
+** xref:project-setup.adoc[OpenShift AI Setup] 
+** xref:jupyter.adoc[Jupyter Notebook]
+** xref:model-serving.adoc[Model Serving]
+** xref:validation.adoc[Model Validation]
 
 * Model Serving and Deployment
 ** xref:module-03.adoc#model-server-creation[Model Server Creation] 
