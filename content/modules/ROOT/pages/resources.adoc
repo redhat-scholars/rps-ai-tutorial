@@ -1,6 +1,6 @@
 # Conclusion and Resources
 
-Congratulations on completing the "Rock, Scissors, Paper: An AI-powered Interactive Game with OpenShift AI and OpenShift GitOps" lab! Throughout this lab, you've gained hands-on experience with various OpenShift technologies and learned how to develop, deploy, and manage an AI-powered game application.
+Congratulations on completing the *Rock, Scissors, Paper: An AI-powered Interactive Game with OpenShift AI and OpenShift GitOps* lab! Throughout this lab, you've gained hands-on experience with various OpenShift technologies and learned how to develop, deploy, and manage an AI-powered game application.
 
 ## Lab Summary
 Let's recap the key points and achievements from this lab:
