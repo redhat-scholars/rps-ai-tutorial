@@ -6,7 +6,7 @@ In this section, we'll validate and test our deployed RoShambo game model using 
 
 In the `rps-game/roshambo-notebooks/modelmesh` directory, you'll find the `grpc_test` notebook. Open this notebook to begin the validation process.
 
-image::openshift-ai-jupyter-notebook-validation.png[Jupyter Notebook Validation]
+image::openshift-ai-jupyter-notebook-validation-grpc.png[Jupyter Notebook Validation]
 
 TIP: The grpc_test notebook utilizes `gRPC` (gRPC Remote Procedure Call) for communication with the deployed model server. gRPC is a high-performance, open-source framework developed by Google that enables efficient and scalable communication between client and server applications.
 

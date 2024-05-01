@@ -11,9 +11,12 @@ image::openshift-ai-jupyter-notebook-validation.png[Jupyter Notebook Validation]
 Run through the notebook cells one by one to understand the technical details of the model development process:
 
 - The notebook starts by importing the necessary libraries, such as PyTorch, torchvision, and matplotlib, which are essential for model development and visualization.
-- The pre-trained ResNet model is loaded using the `torchvision` function, which provides a powerful starting point for transfer learning.
-- The ResNet model is fine-tuned on the RoShambo dataset using techniques like freezing the base layers, replacing the final fully connected layer, and training with a suitable optimizer and loss function.
-- The trained model's performance is evaluated using metrics such as accuracy, precision, recall, and F1-score, providing insights into its effectiveness in classifying hand gestures.
+- The pre-trained ResNet model is loaded using the `get_resnet()` function, which provides a powerful starting point for transfer learning.
+- The dataset is loaded using the `get_ds_dl()` function, which prepares the data for training and testing. 
+- The ONNX model is loaded using the `create_session()` function, which allows for efficient inference. 
+- The model's performance is evaluated on the test set by iterating over the test images and comparing the predicted class with the actual label. 
+- The notebook calculates the percentage of incorrect predictions and displays the distribution of incorrect predictions grouped by the true label and predicted class. 
+- Finally, the notebook visualizes some of the incorrectly classified images for further analysis.
 
 You'll also see in the `modelmesh/images` directory there are some examples used to test the model.
 
@@ -33,7 +36,9 @@ image::openshift-ai-tekton-pipeline-start.png[Tekton Pipeline Start]
 
 You can easily monitor the pipeline execution progress in the OpenShift AI dashboard, using the 1:1 mapping from Jupyter Hub to OpenShift AI.
 
+////
 image::openshift-ai-tekton-pipeline-progress.png[Tekton Pipeline Progress]
+////
 
 Once the pipeline execution is complete, you can verify the presence of the trained model artifact in the OpenShift AI dashboard. The model artifact represents the final trained model that can be used for serving and inference. By running the data science pipeline, you automate the model construction process, ensuring reproducibility and enabling seamless integration with the overall ML workflow.
 
