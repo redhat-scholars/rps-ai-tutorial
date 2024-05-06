@@ -8,7 +8,7 @@ Firstly, access the game application by navigating to the frontend route URL pro
 
 image::openshift-ai-game-topology-route.png[AI Game Topology]
 
-The current version of the game does not include the camera feature, so you'll be playing against the computer in a dummy mode. Once the game loads, you'll see the main screen where you can click *Start Game* to select your move (rock, paper, or scissors) by clicking on the corresponding button.
+The current version of the game does not include the camera feature, so you'll be playing against the computer in a dummy mode. Once the frontend loads, you'll see the main screen where you can click *Start Game*, learn how to select your move (rock, paper, or scissors), and select *Join Game*. You'll then be taken to the waiting lobby to begin.
 
 image::ai-game-main-screen.png[AI Game Main Screen]
 

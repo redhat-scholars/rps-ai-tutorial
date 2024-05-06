@@ -1,4 +1,4 @@
-## Deploying the application with GitOps
+# Deploying the application with GitOps
 
 In this section, we'll deploy the proxy and game application using Argo CD, a declarative GitOps continuous delivery tool for Kubernetes. Argo CD follows the GitOps principles, where the desired state of the application is declaratively defined in a Git repository, and Argo CD ensures that the actual state of the deployed application matches the desired state. Argo CD continuously monitors the desired state of the application in the Git repository and automatically applies the changes to the Kubernetes cluster.
 
@@ -6,7 +6,7 @@ We'll create an Argo CD instance in the user namespace, configure applications f
 
 ## Initializing Argo CD
 
-First, we'll install Argo CD in the user namespace. From the `game-{user}` project, click the *Import Yaml* or *+* button from the top-right corner, copy and paste the following YAML to install Argo CD:
+First, we'll install Argo CD in the user namespace. From the link:{console_url}[*OpenShift Web Console*,role='params-link',window='_blank'] `game-{user}` project, click the *Import Yaml* or *+* button from the top-right corner, copy and paste the following YAML to install Argo CD:
 
 [source,sh,role=execute]
 ----

@@ -1,10 +1,10 @@
 # Validating the Model Deployment
 
-In this section, we'll validate and test our deployed RoShambo game model using the Jupyter Hub environment in OpenShift AI. We'll navigate to the `modelmesh` directory, open the `grpc_test` notebook, and run the steps to ensure that the model can accurately recognize the three hand gesture images provided in the notebook.
+In this section, we'll validate and test our deployed RoShambo game model using the Jupyter Hub environment in OpenShift AI. We'll navigate to the `modelmesh` directory, open the `rps_grpc` notebook, and run the steps to ensure that the model can accurately recognize the three hand gesture images provided in the notebook.
 
 ## Testing the Model Deployment
 
-In the `rps-game/roshambo-notebooks/modelmesh` directory, you'll find the `grpc_test` notebook. Open this notebook to begin the validation process.
+In the `rps-game/roshambo-notebooks/modelmesh` directory, you'll find the `rps_grpc` notebook. Open this notebook to begin the validation process.
 
 image::openshift-ai-jupyter-notebook-validation-grpc.png[Jupyter Notebook Validation]
 

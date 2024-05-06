@@ -6,7 +6,7 @@ The AI proxy serves as an intermediary between the game application and the mode
 
 When the game application requests needs to be sent to the model server, the AI proxy establishes a connection with the model server using the appropriate protocol and forwards the request. The model server processes the request, performs the necessary inference or prediction, and sends the response back to the AI proxy.
 
-In the Juypter Hub environment, open the `rest_test` notebook in the `rps-game/roshambo-notebooks` directory. This notebook contains the code to test the AI proxy via REST protocol.
+In the Juypter Hub environment, open the `rps_test` notebook in the `rps-game/roshambo-notebooks` directory. This notebook contains the code to test the AI proxy via REST protocol.
 
 image::jupyterhub-rest-test-notebook.png[JupyterHub REST Test Notebook]
 
