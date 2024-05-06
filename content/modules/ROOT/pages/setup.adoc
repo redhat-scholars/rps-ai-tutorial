@@ -75,7 +75,7 @@ image::argocd.png[Argo CD]
 
 ### Gitea
 
-We'll also be using *Gitea*, a self-hosted Git service, to store our Vote App source code and Argo CD application manifests. To access Gitea, visit this link:{gitea_console_url}[*Gitea Link*,role='params-link',window='_blank']. You'll have access to multiple *Gitea* repositories that contain the source code and Argo CD application manifests. As a reference, here are your credentials:
+We'll also be using *Gitea*, a self-hosted Git service, to store our game code and Argo CD application manifests. To access Gitea, visit this link:{gitea_console_url}[*Gitea Link*,role='params-link',window='_blank']. You'll have access to multiple *Gitea* repositories that contain the source code and Argo CD application manifests. As a reference, here are your credentials:
 
 - Username: `{user}`
 - Password: `{password}`
