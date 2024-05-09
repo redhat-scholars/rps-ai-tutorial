@@ -45,6 +45,8 @@ Once the deployment is complete, you can access the Argo CD web interface by cli
 
 image::openshift-ai-argocd-topology.png[Argo CD Topology]
 
+IMPORTANT: Make sure you access ArgoCD through the `argocd-server` route URL, and *not* the *Cluster Argo CD* route. This is to ensure your permissions are correctly set up.
+
 The Argo CD web interface is protected by OAuth, and you can log in using the OpenShift credentials (`{user}`, `{password}`), and authorize the Argo CD application to access the OpenShift API. Now, you can access the Argo CD web interface and manage the applications.
 
 image::openshift-ai-argocd-login.png[Argo CD Login]

@@ -41,6 +41,8 @@ You can easily monitor the pipeline execution progress in the OpenShift AI dashb
 
 image::openshift-ai-tekton-pipeline-progress.png[Tekton Pipeline Progress]
 
+IMPORTANT: If you happen to get an error about "No Runtime Found", unfortunately, you'll need to manually delete and recreate the workbench (with a new name). This is a known issue with the current version of OpenShift AI.
+
 Once the pipeline execution is complete, you can verify the presence of the trained model artifact in the OpenShift AI dashboard. The model artifact represents the final trained model that can be used for serving and inference. By running the data science pipeline, you automate the model construction process, ensuring reproducibility and enabling seamless integration with the overall ML workflow.
 
 image::openshift-ai-tekton-pipeline-artifact.png[Tekton Pipeline Artifact]
