@@ -1,4 +1,4 @@
-== Welcome to the Red Hat Summit 2024 Showroom Template
+== Welcome to the KubeCon EU 2025 Lab Template
 
 This git repo template was created to make it easy for you to start developing your lab instructions.
 
