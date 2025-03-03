@@ -1,4 +1,4 @@
-== Welcome to the KubeCon EU 2025 Lab Template
+== Welcome to the KubeCon EU 2025 Lab
 
 This git repo template was created to make it easy for you to start developing your lab instructions.
 
