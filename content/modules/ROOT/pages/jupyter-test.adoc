@@ -1,4 +1,6 @@
 # Testing the Inference Service
+:imagesdir: ../assets/images
+:sectnums:
 
 The AI proxy serves as an intermediary between the game application and the model server or AI service. It acts as a gateway, receiving requests from the game application and forwarding them to the appropriate backend service. Let's test to make sure the AI proxy is working correctly back in our Jupyter notebook.
 

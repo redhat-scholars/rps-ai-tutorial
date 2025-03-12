@@ -1,4 +1,6 @@
 # Let's all Play!
+:imagesdir: ../assets/images
+:sectnums:
 
 The RoShambo game supports a multiplayer mode where players are automatically assigned to teams and compete against each other. Let's see who has the skill, and luck, to win the most games!
 

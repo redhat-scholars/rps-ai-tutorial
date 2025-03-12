@@ -1,4 +1,6 @@
 # Setup and Overview of the Workshop Environment
+:imagesdir: ../assets/images
+:sectnums:
 
 In this section, we'll look at the setup of the link:https://www.redhat.com/en/technologies/cloud-computing/openshift[OpenShift] cluster we're using for today's lab. This includes link:https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-data-science[OpenShift AI] and the link:https://www.redhat.com/en/technologies/cloud-computing/openshift/what-are-openshift-operators[OpenShift Operators] that have been installed, as well as the projects that have been created for you. We'll look at the operators we'll be using throughout the lab, including link:https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-data-science[OpenShift AI] and link:https://www.redhat.com/en/technologies/cloud-computing/openshift/gitops[OpenShift GitOps].
 

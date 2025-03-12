@@ -1,4 +1,6 @@
 # Deploying the Game Application with Argo CD
+:imagesdir: ../assets/images
+:sectnums:
 
 In this section, we'll deploy the game application using Argo CD. We'll create a new application in Argo CD, configure it to use the same manifests repository as the AI proxy, and specify the helm path for the game application.
 

@@ -1,10 +1,12 @@
 # Welcome to the Tutorial!
+:imagesdir: ../assets/images
+:sectnums:
 
 Welcome to the *Tutorial: Rock, Paper, Scissors! Build an AI-powered Interactive Game With Argo CD and Kubeflow*. We're glad to have you here with us at https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/[*KubeCon and CloudNativeCon Europe 2025*]!
 
 ## About this lab
 
-This workshop provides you with your own *Kubernetes cluster* and a series of exercises that teach you how to use OpenShift AI and OpenShift GitOps for an AI-powered interactive game called RoShambo. You will learn how to use link:https://www.kubeflow.org/[*Kubeflow*,window='_blank'] to automate model construction through data science pipelines and deploy models via the model server. You will also learn how to use link:https://argo-cd.readthedocs.io/en/stable/[*Argo CDs*,window='_blank'] to handle the deployment of models and applications using GitOps principles. 
+This tutorial provides you with a shared *Kubernetes cluster* and a series of exercises that teach you how to use Kubeflow and Argo CD for an AI-powered interactive game called RoShambo. You will learn how to use link:https://www.kubeflow.org/[*Kubeflow*,window='_blank'] to automate model construction through data science pipelines and deploy models via the model server. You will also learn how to use link:https://argo-cd.readthedocs.io/en/stable/[*Argo CDs*,window='_blank'] to handle the deployment of models and applications using GitOps principles. 
 
 We'll be deploying a multi-component application which includes a frontend built with link:https://reactjs.org[*React*,window='_blank'], a backend using link:https://quarkus.io[*Quarkus*,window='_blank'], and an AI model built and trained with link:https://pytorch.org[*PyTorch*,window='_blank'].
 
@@ -16,30 +18,42 @@ The demo application in this workshop is an interactive game called RoShambo, wh
 
 image::roshambo-game.png[RoShambo Game]
 
-By the end of this lab, you will have a better understanding of how to deploy AI models using OpenShift AI, automate model construction with data science pipelines, and leverage OpenShift GitOps for deploying models and applications. The workshop includes the following steps:
+By the end of this lab, you will have a better understanding of how to deploy AI models using Kubeflow, automate model construction with data science pipelines, and leverage Argo CD for deploying models and applications. The workshop includes the following steps:
 
-- Work with an existing OpenShift cluster and access OpenShift AI
+- Work with an existing OpenShift cluster and access Kubeflow
 - Create a Data Science project and set up a workbench
 - Work within Jupyter Hub to work with an existing PyTorch project and explore the various notebooks
 - Run a data science pipeline to train the AI model
 - Create a model server and test the AI model
-- Deploy the AI proxy and game application using OpenShift GitOps
+- Deploy the AI proxy and game application using Argo CD
 - Interact with the game, both with and without camera input
 - Enable the multiplayer feature and play together with other workshop participants
-- Explore MLOps automation with OpenShift AI, Pipelines, and GitOps.
+- Explore MLOps automation with Kubeflow, Pipelines, and GitOps.
 
-== What is OpenShift AI?
+== What is Kubeflow?
 
-link:https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-ai[OpenShift AI,window='_blank'] is a managed cloud service for data scientists and developers of intelligent applications. It provides a fully supported environment in which to rapidly develop, train, test, and deploy machine learning (ML) models and intelligent applications in the public cloud.
+Kubeflow is essentially an open-source machine learning (ML) platform dedicated to simplifying the deployment and management of ML workflows on Kubernetes. Here's a breakdown of its key features:
 
-image:openshift-ai-dashboard.png[]
+- Kubeflow Pipelines enable the creation and management of portable and scalable ML workflows. These workflows are defined as pipelines, where each step is containerized.
+- Katib handles hyperparameter tuning, automating the process of finding the optimal parameters for ML models.
+- KFServing simplifies the deployment of trained ML models for production use, providing a serverless inference platform.
+- Kubeflow allows users to run Jupyter notebooks within Kubernetes clusters, providing a flexible development environment.
+- Kubeflow provides metadata tracking, which is very important for experiment tracking, and model versioning. 
 
-== What is OpenShift GitOps?
+image:kubeflow-arch.png[]
 
-link:https://www.redhat.com/en/technologies/cloud-computing/openshift/gitops[OpenShift GitOps,window='_blank'] is a declarative way to implement continuous deployment for cloud-native applications using Git as the single source of truth. It enables you to manage and automate complex deployments, saving time during deployment and release cycles. You can use OpenShift GitOps to create repeatable processes for managing OpenShift clusters and applications across multi-cluster Kubernetes environments.
+== What is Argo CD?
 
-image:openshift-gitops-graphic.png[]
+Argo CD is a powerful, declarative, GitOps continuous delivery tool for Kubernetes. In simpler terms, it helps automate the deployment of applications to Kubernetes clusters. Here's a breakdown of its key functionalities:
+
+- Automates the deployment of applications to Kubernetes clusters.
+- Automatically synchronizes the application's live state with the desired state in Git.
+- Provides a user-friendly web UI for visualizing and managing application deployments.
+- Offers a CLI for interacting with Argo CD.
+- Supports various configuration formats, including YAML, Helm charts, and Kustomize.
+
+image:argocd-arch.png[]
 
 ## Next Steps
 
-Ready to get started with the lab? Let's begin by viewing the up the workshop environment and exploring OpenShift AI.
+Ready to get started with the lab? Let's begin by viewing the up the workshop environment and exploring Kubeflow.

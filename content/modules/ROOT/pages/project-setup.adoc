@@ -1,6 +1,8 @@
 # Setting up the Data Science Project
 :linkattrs:
 :window: _blank
+:imagesdir: ../assets/images
+:sectnums:
 
 Let's kick off this workshop by accessing our instance of OpenShift AI and creating a new *Data Science Project*. This is a logical grouping that will contain all the assets related to our data science work, such as notebooks, data connections, model serving, and more, all in one place. Let's setup our project and start exploring the capabilities of OpenShift AI!
 

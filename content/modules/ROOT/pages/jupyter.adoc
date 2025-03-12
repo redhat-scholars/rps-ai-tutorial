@@ -1,4 +1,6 @@
 # Working with Jupyter Notebooks
+:imagesdir: ../assets/images
+:sectnums:
 
 Jupyter Notebooks are a great way to work with data science and machine learning projects. They allow you to write and execute Python code in a web-based interface, and they also allow you to include text, images, and other content in the same document. This makes them a great tool for data analysis, data visualization, and other tasks that involve working with data. Let's validate the notebook that was used to train the model. We'll also run the data science pipeline to automate the model construction process.
 

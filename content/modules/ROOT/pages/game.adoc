@@ -1,4 +1,6 @@
 # Playing the RoShambo Game
+:imagesdir: ../assets/images
+:sectnums:
 
 In this section, we'll explore the different ways to play the RoShambo game. We'll start by playing against the computer without the camera feature, then enable the camera feature to play using hand gestures and fully experience the power of our trained AI model making inferences depending on our hand gestures.
 
