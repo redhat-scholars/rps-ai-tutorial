@@ -28,7 +28,7 @@ image::gitops-operator-details.png[GitOps Details]
 
 ### Web Console to access Kubernetes
 
-First, let's ensure we're logged into the *OpenShift* cluster through the Web Console. You can access the OpenShift Console from the lab's start page, or you can visit the OpenShift Console using this link:{console_url}[*OpenShift Web Console Link*,role='params-link',window='_blank'].
+First, let's ensure we're logged into the *OpenShift* cluster through the Web Console. You can access the OpenShift Console from the lab's start page, or you can visit the OpenShift Console using this link:{console_url}[*OpenShift Web Console*,role='params-link',window='_blank'].
 
 image::openshift-login-options.png[OpenShift Page Login]
 
@@ -75,7 +75,7 @@ image::argocd.png[Argo CD]
 
 ### Gitea
 
-We'll also be using *Gitea*, a self-hosted Git service, to store our game code and Argo CD application manifests. To access Gitea, visit this link:{gitea_console_url}[*Gitea Link*,role='params-link',window='_blank']. You'll have access to multiple *Gitea* repositories that contain the source code and Argo CD application manifests. As a reference, here are your credentials:
+We'll also be using *Gitea*, a self-hosted Git service, to store our game code and Argo CD application manifests. To access Gitea, visit this link:{gitea_console_url}[*Gitea*,role='params-link',window='_blank']. You'll have access to multiple *Gitea* repositories that contain the source code and Argo CD application manifests. As a reference, here are your credentials:
 
 - Username: `{user}`
 - Password: `{password}`
