@@ -1,6 +1,6 @@
 ---
 site:
-  title: Red Hat Summit 2024
+  title: KubeCon EU 2025
   # url: https://redhat-scholars.github.io/course-template
   start_page: modules::index.adoc
 

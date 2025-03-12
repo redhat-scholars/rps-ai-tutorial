@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-#
 
 echo "Stopping serve process..."
-podman kill showroom-httpd
+# Setup Container Runtime
+current_dir="$(dirname "$(realpath "$0")")"
+source $current_dir/detect-container-runtime
+
+${CONTAINER_RUNTIME} kill showroom-httpd
 echo "Stopped serve process."
