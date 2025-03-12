@@ -1,4 +1,4 @@
-# Welcome to the Workshop!
+# Welcome to the Tutorial!
 
 Welcome to the *Tutorial: Rock, Paper, Scissors! Build an AI-powered Interactive Game With Argo CD and Kubeflow*. We're glad to have you here with us at https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/[*KubeCon and CloudNativeCon Europe 2025*]!
 
