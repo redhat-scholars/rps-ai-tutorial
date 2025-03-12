@@ -8,7 +8,7 @@
 ** xref:module-02.adoc#container[Enable Container]
 ////
 
-* Workshop Overview
+* Tutorial Overview
 ** xref:index.adoc[Intro] 
 ** xref:setup.adoc[Environment Setup]
 

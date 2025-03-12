@@ -1,6 +1,6 @@
 ---
 name: modules
-title: Sample Module Title
+title: Rock, Paper, Scissors!
 version: master
 nav:
   - modules/ROOT/nav.adoc
