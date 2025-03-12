@@ -1,14 +1,12 @@
-# Setup and Overview of the Workshop Environment
+# Setup and Overview of the Tutorial Environment
 :imagesdir: ../assets/images
 :sectnums:
 
-In this section, we'll look at the setup of the link:https://www.redhat.com/en/technologies/cloud-computing/openshift[OpenShift] cluster we're using for today's lab. This includes link:https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-data-science[OpenShift AI] and the link:https://www.redhat.com/en/technologies/cloud-computing/openshift/what-are-openshift-operators[OpenShift Operators] that have been installed, as well as the projects that have been created for you. We'll look at the operators we'll be using throughout the lab, including link:https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-data-science[OpenShift AI] and link:https://www.redhat.com/en/technologies/cloud-computing/openshift/gitops[OpenShift GitOps].
+In this section, we'll look at the setup of the Kubernetes cluster (link:https://www.redhat.com/en/technologies/cloud-computing/openshift[Red Hat OpenShift]) we're using for today's lab. This includes *Kubeflow* (link:https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-data-science[Red Hat OpenShift AI]) that have been installed using the OpenShift operators, as well as the projects that have been created for you. We'll look at the operators we'll be using throughout the lab.
 
 ## Environment Setup
 
 NOTE: Everything has already been pre-installed on your cluster, so there's no need to do anything here. This is just for reference.
-
-Throughout this lab, you'll have your own account on an OpenShift 4.12 cluster. To save time, this cluster has been pre-configured with the below OpenShift Operators. You can think of Operators as add-ons to an OpenShift or Kubernetes cluster that provide extended features/capabilities. We've attached screenshots of each operator's details page, as only the cluster admin account can view these details.
 
 ### OpenShift Operators
 
@@ -28,7 +26,7 @@ image::gitops-operator-details.png[GitOps Details]
 
 ## Lab Checks
 
-### OpenShift Web Console
+### Web Console to access Kubernetes
 
 First, let's ensure we're logged into the *OpenShift* cluster through the Web Console. You can access the OpenShift Console from the lab's start page, or you can visit the OpenShift Console using this link:{console_url}[*OpenShift Web Console Link*,role='params-link',window='_blank'].
 
@@ -45,7 +43,7 @@ image::openshift-dashboard.png[OpenShift Dashboard]
 
 NOTE: If you aren't already, you can navigate to the *Developer* perspective, where we'll be spending some of our time.
 
-### OpenShift AI
+### Access Kubeflow via OpenShift AI
 
 Let's also view the process of accessing the *OpenShift AI*. You can access the OpenShift AI dashboard either from the the OpenShift Web Console app launcher, or you can visit the Developer Hub Console using this link:https://rhods-dashboard-redhat-ods-applications.{openshift_cluster_ingress_domain}[*OpenShift AI Dashboard*,role='params-link',window='_blank']. 
 
