@@ -90,9 +90,9 @@ Now that we have deployed the RoShambo game model using the Model Server in Open
 
 ##OpenVINO Model Server
 
-OpenVINO™ Model Server (OVMS) is a high-performance system designed to serve machine learning models optimized by the OpenVINO™ toolkit. It enables efficient deployment of AI models in production environments, facilitating scalable and reliable inference across various applications.
+OpenVINO Model Server (OVMS) is a high-performance system designed to serve machine learning models optimized by the OpenVINO toolkit. It enables efficient deployment of AI models in production environments, facilitating scalable and reliable inference across various applications.
 
-== Key Features of OpenVINO™ Model Server
+== Key Features of OpenVINO Model Server
 
 Flexible Deployment: OVMS supports deployment across diverse environments, including Docker containers, bare metal servers, and orchestration platforms like Kubernetes and OpenShift.
 
@@ -102,7 +102,7 @@ Efficient Resource Utilization: OVMS is optimized for both horizontal and vertic
 
 Secure Model Management: Models are stored either locally or in remote object storage services, and are not directly exposed to client applications, enhancing security and access control.
 
-== Benefits of Using OpenVINO™ Model Server
+== Benefits of Using OpenVINO Model Server
 
 Simplified Client Integration: Clients require minimal updates since the server abstracts the model details, providing a stable interface for inference requests.
 
@@ -110,4 +110,4 @@ Microservices Architecture Compatibility: OVMS is ideal for microservices-based 
 
 Dynamic Model Management: When serving multiple models, OVMS allows for runtime configuration changes without needing to restart the server, enabling the addition, deletion, or updating of models on-the-fly.
 
-For a quick start with OpenVINO™ Model Server, refer to the official documentation's quickstart guide. https://github.com/openvinotoolkit/model_server
+For a quick start with OpenVINO Model Server, refer to the official documentation's quickstart guide. https://github.com/openvinotoolkit/model_server
