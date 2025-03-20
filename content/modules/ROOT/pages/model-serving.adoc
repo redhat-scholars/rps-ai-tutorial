@@ -88,7 +88,7 @@ TIP: The API endpoint provided by the Model Server follows a standard format, ty
 
 Now that we have deployed the RoShambo game model using the Model Server in OpenShift AI, we can integrate it with the game application to enable AI-powered gameplay. In the next section, we'll test the inferencing endpoint by querying the model with sample input data and verifying the predictions.
 
-##OpenVINO Model Server
+### OpenVINO Model Server
 
 OpenVINO Model Server (OVMS) is a high-performance system designed to serve machine learning models optimized by the OpenVINO toolkit. It enables efficient deployment of AI models in production environments, facilitating scalable and reliable inference across various applications.
 
