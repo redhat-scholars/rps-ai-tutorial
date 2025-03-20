@@ -4,6 +4,34 @@
 
 Jupyter Notebooks are a great way to work with data science and machine learning projects. They allow you to write and execute Python code in a web-based interface, and they also allow you to include text, images, and other content in the same document. This makes them a great tool for data analysis, data visualization, and other tasks that involve working with data. Let's validate the notebook that was used to train the model. We'll also run the data science pipeline to automate the model construction process.
 
+## The training notebook good to know -- not mandatory to follow through the lab)
+
+=== YOLOv11s Training Process
+
+For this project, we trained a YOLOv11s model for object detection. Here are the key details of the training process:
+
+Dataset Source: The training images were obtained from Roboflow, a platform that provides high-quality datasets for computer vision.
+
+Training Configuration: The model was trained for 20 epochs.
+
+Evaluation Metric: The model achieved a Mean Average Precision (mAP@50) of 0.95, indicating high accuracy in object detection.
+
+=== YOLOv11 Model Variations
+
+YOLOv11 was developed by Ultralytics and comes in different variations to balance speed and accuracy depending on the application:
+
+YOLOv11n (Nano): Optimized for edge devices with minimal computational power.
+
+YOLOv11s (Small): A lightweight model providing a good balance of speed and accuracy, used in this project.
+
+YOLOv11m (Medium): A mid-tier model that offers higher accuracy at the cost of increased computation.
+
+YOLOv11l (Large): Designed for high-accuracy applications, requiring more computational power.
+
+YOLOv11xl (Extra Large): The most powerful variant, delivering the highest accuracy for complex object detection tasks.
+
+By selecting YOLOv11s, we ensured an optimal trade-off between inference speed and model performance
+
 ## Validating the training notebook
 
 NOTE: No need to actually run the cells in the notebook, this is an example of the training process used by data scientists for the model we'll be using today.
