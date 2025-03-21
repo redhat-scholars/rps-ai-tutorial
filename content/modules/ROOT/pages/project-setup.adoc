@@ -28,7 +28,10 @@ image::openshift-ai-applications.png[OpenShift AI Applications]
 
 ### Data Science Projects
 
-This area is where you can create and manage your data science projects. Today, we'll be creating and organizing our project here, but you may have multiple projects for different teams or use cases.
+This area is where you can create and manage your data science projects. Today, we created the following 2 projects for you in advance.
+
+* ArgoCD GitOps Namespace
+* Workspace
 
 image::openshift-ai-projects.png[OpenShift AI Projects] 
 
