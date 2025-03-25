@@ -13,8 +13,9 @@
 ** xref:setup.adoc[Environment Setup]
 
 * Model Testing & Deployment
-** xref:project-setup.adoc[OpenShift AI Setup] 
+** xref:project-setup.adoc[AI Setup] 
 ** xref:jupyter.adoc[Jupyter Notebook]
+** xref:kubeflow-pipeline.adoc[Kubeflow Pipeline]
 ** xref:model-serving.adoc[Model Serving]
 ** xref:validation.adoc[Model Validation]
 
