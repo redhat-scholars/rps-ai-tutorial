@@ -53,61 +53,25 @@ This section provides access to resources such as documentation, tutorials, and 
 
 image::openshift-ai-resources.png[OpenShift AI Resources]
 
-## Setting up a Data Science Project
+## Working with Data Science Projects
 
-Fantastic, we understand the basics of OpenShift AI and are ready to create our first data science project. Head to the *Data Science Projects* section and click on the *Create data science project* button.
+Fantastic, we understand the basics of OpenShift AI and are ready to use our first data science project. Head to the *Data Science Projects* and select your already created project `wskp-{user}`.
 
-image::openshift-ai-create-project.png[Create Data Science Project]
-
-For the project name, enter `game-{user}` and click on the *Create* button. Note that this screenshot will be different from the one you create.
-
-image::openshift-ai-create-project-form.png[Create Data Science Project Form]
+image::openshift-ai-project-selection.png[Select Data Science Project]
 
 Welcome to your first data science project! This is where you'll be spending most of your time in this workshop, building and operationalizing your AI/ML models. Let's start by creating a data connection where we'll be loading our data from.
 
-### Creating a Data Connection
+image::openshift-ai-project-overview.png[Select Data Science Project]
 
-We've deployed an instance of Minio on OpenShift, which is an object storage server compatible with Amazon S3. We'll use Minio to store our data and create a connection to it in our project.
+### Data Connections
 
-Scroll down to the *Data Connections* tab and then click on the *Add data connection* button.
+We've deployed an instance of Minio S3-compatible object storage on the cluster. We'll use Minio to store our data and create a connection to it in our project.
 
-image::openshift-ai-create-connection.png[Create Data Connection]
+The data connection to Minio to store the models and the pipelines have been already created for you, and you can review it by clicking to the "Connections" tab.
 
-Here's the details to enter in the form, specific to our cluster. Please copy & paste from the right side of the table, and when ready, click on the *Create* button.
-
-[cols="1,1"] 
-|===
-| *Name*
-| Shared Minio: Pipelines
-| *Access Key*
-| minio
-| *Secret Key*
-| minio123
-| *Endpoint*
-| http://minio.ic-shared-minio.svc.cluster.local:9000
-| *Region*
-| none
-| *Bucket*
-| {user}
-|===
+image::openshift-ai-connections.png[Create Data Connection]
 
 image::openshift-ai-create-connection-form.png[Create Data Connection Form]
-
-Great! We've successfully created a data connection to Minio. Next, let's configure a pipeline server to run our machine learning pipelines.
-
-### Configuring a Pipeline Server
-
-Scroll down to the *Pipeline* tab and click on the *Configure pipeline server* button.
-
-image::openshift-ai-configure-pipeline-server.png[Configure Pipeline Server]
-
-To select the data connection we created earlier, `Shared Minio`, select the Key dropdown and then click on the *Shared Minio* credentials.
-
-image::openshift-ai-configure-pipeline-server-form.png[Configure Pipeline Server Form]
-
-When the pipeline server is ready, processing wheel will stop spinning. This means we're all set to run our machine learning pipelines, which we'll be able to see when we run them from our Notebooks.
-
-image::openshift-ai-pipeline-server-ready.png[Pipeline Server Ready]
 
 ### Creating a Workbench for Jupyter Notebooks
 
@@ -115,11 +79,25 @@ Speaking of notebooks, let's create a workbench where we can run our Jupyter Not
 
 image::openshift-ai-create-workbench.png[Create Workbench]
 
-For the workbench name, you can customize it, for ex. `My Workbench`, and select the *Image selection* to *PyTorch*. All else can remain as default, and then click on the *Create workbench* button.
+For the workbench name, you can customize it, for ex. `My Workbench`, and select the *Image selection* to *Standard Data Science*. All else can remain as default.
 
 image::openshift-ai-create-workbench-form.png[Create Workbench Form]
 
-You'll need to wait just a minute or two for the workbench to be created, but once it's ready, click the *Open* button to access the Jupyter Notebook environment.
+In the *Connections* section, click to *Attach existing connection*.
+
+image::openshift-ai-create-workbench-connection.png[Create Workbench Connection]
+
+Select *Storage* from the dropdown list.
+
+image::openshift-ai-create-workbench-connection-storage.png[Create Workbench Connection]
+
+Click to *Attach*.
+
+image::openshift-ai-create-workbench-connection-storage-attach.png[Create Workbench Connection]
+
+Then click on the *Create workbench* button.
+
+You'll need to wait just a few minutes for the workbench to be created, but once it's ready, click the *Open* button to access the Jupyter Notebook environment.
 
 NOTE: During this process, the notebook image is being pulled from the container registry, and pods are being created to run the notebook server.
 
