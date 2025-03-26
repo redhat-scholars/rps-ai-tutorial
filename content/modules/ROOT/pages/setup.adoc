@@ -4,27 +4,7 @@
 
 In this section, we'll look at the setup of the Kubernetes cluster (link:https://www.redhat.com/en/technologies/cloud-computing/openshift[Red Hat OpenShift]) we're using for today's lab. This includes *Kubeflow* (link:https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-data-science[Red Hat OpenShift AI]) that have been installed using the OpenShift operators, as well as the projects that have been created for you. We'll look at the operators we'll be using throughout the lab.
 
-## Environment Setup
-
-NOTE: Everything has already been pre-installed on your cluster, so there's no need to do anything here. This is just for reference.
-
-### OpenShift Operators
-
-[%collapsible]
-====
-We'll use *OpenShift AI* to create and manage our AI/ML workloads. This includes creating and managing AI/ML pipelines, models, and datasets.
-
-image::ai-operator-details.png[Pipelines Details]
-====
-
-[%collapsible]
-====
-We'll use *OpenShift GitOps* to manage our GitOps workflows. This includes creating and managing GitOps applications, repositories, and environments.
-
-image::gitops-operator-details.png[GitOps Details]
-====
-
-## Lab Checks
+## Exploring the Lab Environment
 
 ### Web Console to access Kubernetes
 
