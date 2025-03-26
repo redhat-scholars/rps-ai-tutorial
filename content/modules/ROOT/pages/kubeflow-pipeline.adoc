@@ -3,4 +3,58 @@
 :sectnums:
 
 
-In this section, 
+## Kubeflow Pipelines
+
+
+link:https://www.kubeflow.org/docs/components/pipelines/overview/[Kubeflow Pipelines (KFP),window='_blank'] is a platform for building and deploying portable and scalable machine learning (ML) workflows using containers on Kubernetes-based systems.
+
+KFP enables data scientists and machine learning engineers to author end-to-end ML workflows natively in Python. A pipeline is a definition of a workflow that composes one or more components together to form a computational directed acyclic graph (DAG). At runtime, each component execution corresponds to a single container execution, which may create ML artifacts.
+
+In this lab, you'll find the Kubeflow pipeline and components in the `roshambo-notebooks/pipelines` dir as follows:
+
+* Pipeline: `training_pipeline.py`
+* Components: `fetch_data.py`, `train_model.py`, `evaluate_model.py`, `save_model.py`
+
+
+Open the `training_pipeline.py`.
+
+image::openshift-ai-jupyter-notebook-run3-pipeline1.png[Jupyter Notebook Pipeline]
+
+Scroll down in the code and change the metadata with your user {user} and your clustere subdomain {openshift_cluster_ingress_domain} as follows:
+
+[source,python,role="copypaste",subs=attributes+]
+----
+if __name__ == '__main__':
+    metadata = {
+        "model_name": "yolov11",
+        "version": "v2",
+        "user": "wksp-userX", # 👈 add your username here
+        "cluster_domain": "apps.cluster-xxxx.opentlc.com", # 👈 add your cluster domain here
+    }
+----
+
+image::openshift-ai-jupyter-notebook-run3-pipeline2.png[Jupyter Notebook Pipeline User]
+
+
+Now go to the top-left of the notebook menu bar and click to the play icon to start the pipeline.
+
+image::openshift-ai-jupyter-notebook-run3-pipeline3.png[Jupyter Notebook Pipeline]
+
+image::openshift-ai-jupyter-notebook-run3-pipeline4.png[Jupyter Notebook Pipeline]
+
+image::openshift-ai-jupyter-notebook-run3-pipeline5.png[Jupyter Notebook Pipeline]
+
+image::openshift-ai-jupyter-notebook-run3-pipeline6.png[Jupyter Notebook Pipeline]
+
+image::openshift-ai-jupyter-notebook-run3-pipeline7.png[Jupyter Notebook Pipeline]
+
+image::openshift-ai-jupyter-notebook-run3-pipeline8.png[Jupyter Notebook Pipeline]
+
+image::openshift-ai-jupyter-notebook-run3-pipeline9.png[Jupyter Notebook Pipeline]
+
+
+
+
+## Next Steps
+
+With our model developed and trained, we're now ready to serve it using the Model Server in OpenShift AI. In the next section, we'll create a Model Server and test the served model.
