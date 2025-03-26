@@ -45,7 +45,7 @@ NOTE: If you aren't already, you can navigate to the *Developer* perspective, wh
 
 ### Access Kubeflow via OpenShift AI
 
-Let's also view the process of accessing the *OpenShift AI*. You can access the OpenShift AI dashboard either from the the OpenShift Web Console app launcher, or you can visit the Developer Hub Console using this link:https://rhods-dashboard-redhat-ods-applications.{openshift_cluster_ingress_domain}[*OpenShift AI Dashboard*,role='params-link',window='_blank']. 
+Let's also view the process of accessing the *OpenShift AI*. You can access the OpenShift AI dashboard either from the the OpenShift Web Console app launcher, or you can visit the OpenShift AI Console using this link:https://rhods-dashboard-redhat-ods-applications.{openshift_cluster_ingress_domain}[*OpenShift AI Dashboard*,role='params-link',window='_blank']. 
 
 image::ai-login.png[Developer Hub Perspective]
 

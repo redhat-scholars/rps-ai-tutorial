@@ -12,7 +12,7 @@ For this project, we trained a YOLOv11s model for object detection. Here are the
 
 Dataset Source: The training images were obtained from Roboflow, a platform that provides high-quality datasets for computer vision.
 
-Training Configuration: The model was trained for 20 epochs.
+Training Configuration: The model was trained for 40 epochs.
 
 Evaluation Metric: The model achieved a Mean Average Precision (mAP@50) of 0.95, indicating high accuracy in object detection.
 
@@ -32,51 +32,88 @@ YOLOv11xl (Extra Large): The most powerful variant, delivering the highest accur
 
 By selecting YOLOv11s, we ensured an optimal trade-off between inference speed and model performance
 
-## Validating the training notebook
+## 1. Experimenting with the model
 
-NOTE: No need to actually run the cells in the notebook, this is an example of the training process used by data scientists for the model we'll be using today.
-
-Now, let's explore the validation notebook to understand how the data scientist created and trained the RoShambo game model. Navigate to the `rps-game/roshambo-notebooks` directory, and open the `validation.ipynb` notebook.  This notebook contains the step-by-step process of model creation, training, and validation.
+Now, let's explore the `1-yolo-rps-experiment-train.ipynb` notebook to understand how the data scientist created and trained the RoShambo game model. Navigate to the `rps-game/roshambo-notebooks` directory, and open the `1-yolo-rps-experiment-train` notebook.  This notebook contains the step-by-step process of model creation, training, and validation.
 
 image::openshift-ai-jupyter-notebook-validation.png[Jupyter Notebook Validation]
 
-Here's a bit about the technical details of the model development process:
+Here's a bit about the technical details of the model development process
 
-- The notebook starts by importing the necessary libraries, such as PyTorch, torchvision, and matplotlib, which are essential for model development and visualization.
-- The pre-trained ResNet model is loaded using the `get_resnet()` function, which provides a powerful starting point for transfer learning.
-- The dataset is loaded using the `get_ds_dl()` function, which prepares the data for training and testing. 
-- The ONNX model is loaded using the `create_session()` function, which allows for efficient inference. 
-- The model's performance is evaluated on the test set by iterating over the test images and comparing the predicted class with the actual label. 
-- The notebook calculates the percentage of incorrect predictions and displays the distribution of incorrect predictions grouped by the true label and predicted class. 
-- Finally, the notebook visualizes some of the incorrectly classified images for further analysis.
+* Start from a pretrained model from YOLOv11s
+* Train the model with additional datasets of rock,paper,scissors and use 1 epoch as an example of training
+* Load and verify the model from local filesystem
+* Export the model to the ONNX format, ready to be uploaded to storage and served as an inference API 
 
-You'll also see in the `modelmesh/images` directory there are some examples used to test the model.
-
-image::openshift-ai-jupyter-notebook-validation-modelmesh.png[Jupyter Notebook Validation ModelMesh]
-
-## Run the Data Science Pipeline
-
-With the model developed and validated in the notebook, let's leverage the power of Kubeflow and Tekton to automate the model construction process using a data science pipeline.
-
-Navigate to the `rps-game/roshambo-notebooks/pipelines` directory, and open the `train.pipeline` file. This file contains an example of the pipeline definition which orchestrates the steps required to build, train, and validate the RoShambo game model.
-
-image::openshift-ai-tekton-pipeline.png[Tekton Pipeline]
-
-Here, simply run the pipeline from the *Start* button on the top of the pipeline view, which is using the open source Elyra project.
-
-image::openshift-ai-tekton-pipeline-start.png[Tekton Pipeline Start]
-
-You can easily monitor the pipeline execution progress in the OpenShift AI dashboard, using the 1:1 mapping from Jupyter Hub to OpenShift AI.
+image::openshift-ai-jupyter-notebook-run1.png[Jupyter Notebook Run]
 
 
-image::openshift-ai-tekton-pipeline-progress.png[Tekton Pipeline Progress]
+You'll also see in the `roshambo-notebooks/dataset/data/train/images` directory the training dataset and in `roshambo-notebooks/dataset/data/test/images`there are some examples used to test the model.
 
-IMPORTANT: If you happen to get an error about "No Runtime Found", unfortunately, you'll need to manually delete and recreate the workbench (with a new name). This is a known issue with the current version of OpenShift AI.
+This model doesn't look great, _yet_!
 
-Once the pipeline execution is complete, you can verify the presence of the trained model artifact in the OpenShift AI dashboard. The model artifact represents the final trained model that can be used for serving and inference. By running the data science pipeline, you automate the model construction process, ensuring reproducibility and enabling seamless integration with the overall ML workflow.
+image::openshift-ai-jupyter-notebook-run1-test.png[Jupyter Notebook Run]
 
-image::openshift-ai-tekton-pipeline-artifact.png[Tekton Pipeline Artifact]
 
-## Next Steps
+## 2. Export, Save and Register the Model
 
-With our model developed and trained, we're now ready to serve it using the Model Server in OpenShift AI. In the next section, we'll create a Model Server and test the served model.
+Now that we have the model exported into an open and standard format such as ONNX, we can save it outside the local filesystem. Generally, an S3-compatible storage is ideal for storing AI models as they could be very large files and the protocol also supports well high availability.
+
+In this section you'll learn use link:https://min.io/[Minio] as a storage and link:https://www.kubeflow.org/docs/components/model-registry/overview/[Kubeflow Model Registry,window='_blank'] as a registry for the model.
+
+A model registry provides a central index for ML model developers to index and manage models, versions, and ML artifacts metadata. It helps with all the lifecycle of the model.
+
+You can now open the `2-yolo-rps-save-model.ipynb` notebook and start experimenting with model lifecycle management for your app.
+
+NOTE: Some setting such as the notebook connection to Minio has been automatically configured for you in order to make the flow easier, however you will be asked to change a placeholder user with your own username in some part of the notebook
+
+[source,python,role="copypaste",subs=attributes+]
+----
+## Change this before continue
+user = "{user}"
+
+model_path_s3 = f"{user}-yolo-rps"
+print(model_path_s3)
+----
+
+
+image::openshift-ai-jupyter-notebook-run2-user.png[Jupyter Notebook Change User]
+
+In the same way, configure user {user} and cluster subdomain {openshift_cluster_ingress_domain} for the model registry.
+
+
+[source,python,role="copypaste",subs=attributes+]
+----
+USERNAME = {user}
+CLUSTER_DOMAIN = {openshift_cluster_ingress_domain}
+
+# Model Registry Configuration
+MODEL_REGISTRY_URL = f"https://registry-rest.{CLUSTER_DOMAIN}"
+AUTHOR_NAME = USERNAME
+
+# Initialize Model Registry Connection
+registry = ModelRegistry(
+    server_address=MODEL_REGISTRY_URL,
+    port=443,
+    author=AUTHOR_NAME,
+    is_secure=False
+)
+----
+
+image::openshift-ai-jupyter-notebook-run2-domain.png[Jupyter Notebook Change Domain]
+
+Go back to the  link:https://rhods-dashboard-redhat-ods-applications.{openshift_cluster_ingress_domain}[*OpenShift AI Dashboard*,role='params-link',window='_blank'] to check if the model is now listed in the *Model Registry* section.
+
+
+image::openshift-ai-jupyter-notebook-run2-registry.png[Jupyter Notebook Registry]
+
+Click to the *{user}-yolo-rps* item. You should see now available the *v1* version of our jupyter notebook generated model.  
+
+image::openshift-ai-jupyter-notebook-run2-registry2.png[Jupyter Notebook Registry]
+
+Click to *v1* to access all details.
+
+image::openshift-ai-jupyter-notebook-run2-registry3.png[Jupyter Notebook Registry]
+
+
+Nice, what about if we want to automate all of this? In the next section!
