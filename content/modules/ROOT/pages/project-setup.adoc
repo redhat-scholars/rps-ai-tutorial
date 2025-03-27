@@ -124,7 +124,7 @@ Click on the *Clone* button to clone the repository.
 
 Click on the Git icon on the left side vertical menu, then switch the branch to *kubecon-eu-2025*.
 
-image::openshift-ai-jupyter-notebook-switch-brannch.png[Jupyter Notebook Switch Branch]
+image::openshift-ai-jupyter-notebook-switch-branch.png[Jupyter Notebook Switch Branch]
 
 IMPORTANT: Don't forget to switch the branch!
 
