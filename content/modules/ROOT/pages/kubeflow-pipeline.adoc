@@ -2,9 +2,7 @@
 :imagesdir: ../assets/images
 :sectnums:
 
-
 ## Kubeflow Pipelines
-
 
 link:https://www.kubeflow.org/docs/components/pipelines/overview/[Kubeflow Pipelines (KFP),window='_blank'] is a platform for building and deploying portable and scalable machine learning (ML) workflows using containers on Kubernetes-based systems.
 
@@ -15,12 +13,11 @@ In this lab, you'll find the Kubeflow pipeline and components in the `roshambo-n
 * Pipeline: `training_pipeline.py`
 * Components: `fetch_data.py`, `train_model.py`, `evaluate_model.py`, `save_model.py`
 
-
 Open the `training_pipeline.py`.
 
 image::openshift-ai-jupyter-notebook-run3-pipeline1.png[Jupyter Notebook Pipeline]
 
-Scroll down in the code and change the metadata with your user {user} and your clustere subdomain {openshift_cluster_ingress_domain} as follows:
+Scroll down in the code and replace the following code with your username and cluster domain:
 
 [source,python,role="copypaste",subs=attributes+]
 ----
@@ -28,8 +25,8 @@ if __name__ == '__main__':
     metadata = {
         "model_name": "yolov11",
         "version": "v2",
-        "user": "wksp-userX", # 👈 add your username here
-        "cluster_domain": "apps.cluster-xxxx.opentlc.com", # 👈 add your cluster domain here
+        "user": "wksp-{user}",
+        "cluster_domain": " {openshift_cluster_ingress_domain}",
     }
 ----
 
