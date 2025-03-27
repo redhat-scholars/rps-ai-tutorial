@@ -70,7 +70,7 @@ print(model_path_s3)
 
 image::openshift-ai-jupyter-notebook-run2-user.png[Jupyter Notebook Change User]
 
-In the same way, configure user {user} and cluster subdomain {openshift_cluster_ingress_domain} for the model registry.
+Update the following model registry configuration.
 
 [source,python,role="copypaste",subs=attributes+]
 ----
