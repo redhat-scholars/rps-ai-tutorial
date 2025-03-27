@@ -28,7 +28,7 @@ For this project, we selected YOLOv11s, ensuring an optimal trade-off between in
 
 ## Experimenting with the model
 
-Open the `1-yolo-rps-experiment-train.ipynb` in the `rps-game/roshambo-notebooks/new` directory. This is a Jupyter notebook to understand how the data scientist created and trained the RoShambo game model. This notebook contains the step-by-step process of model creation, training, and validation.
+Open the `1-yolo-rps-experiment-train.ipynb` in the `rps-game/roshambo-notebooks` directory. This is a Jupyter notebook to understand how the data scientist created and trained the RoShambo game model. This notebook contains the step-by-step process of model creation, training, and validation.
 
 image::openshift-ai-jupyter-notebook-validation.png[Jupyter Notebook Validation]
 
