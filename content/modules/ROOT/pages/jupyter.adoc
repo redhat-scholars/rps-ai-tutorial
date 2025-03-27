@@ -74,7 +74,7 @@ Update the following model registry configuration.
 
 [source,python,role="copypaste",subs=attributes+]
 ----
-USERNAME = {user}
+USERNAME = "{user}"
 CLUSTER_DOMAIN = "{openshift_cluster_ingress_domain}"
 
 # Model Registry Configuration
