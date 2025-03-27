@@ -4,85 +4,34 @@
 
 In this section, we'll deploy our trained RoShambo game model using the Model Server in OpenShift AI. We'll create a Data Connection to access the model artifact and then set up a Model Server to expose the model as an API endpoint. This will enable seamless integration with the RoShambo game application when deployed.
 
-## Create a Data Connection to the Model
-
-First, we need to create a Data Connection to the model artifact in the OpenShift AI environment. This will allow the Model Server to access the model and serve it as an API endpoint. We will create another data connection similar to the pipelines one, but this time for the model artifact.
-
-TIP: OpenShift AI supports various storage options, including S3-compatible object storage, allowing you to store and retrieve your model artifacts seamlessly.
-
-Navigate to the `game-{user}` data science project in OpenShift AI, and click on *Add data connection* from the Data connections section.
-
-image::openshift-ai-add-data-connection.png[Add Data Connection]
-
-Please copy & paste from the right side of the table, and when ready, click on the *Create* button.
-
-[cols="1,1"] 
-|===
-| *Name*
-| Shared Minio: Model
-| *Access Key*
-| minio
-| *Secret Key*
-| minio123
-| *Endpoint*
-| http://minio.ic-shared-minio.svc.cluster.local:9000
-| *Region*
-| none
-| *Bucket*
-| models
-|===
-
-image::openshift-ai-data-connection-created.png[Data Connection Created]
-
-## Create a Model Server
-
-Next, we'll create a Model Server to serve the RoShambo game model as an API endpoint. This will allow the game application to interact with the model and make predictions based on the player's moves. From the Models and model servers section, hit *Add model server*.
-
-TIP: When you create a Model Server in OpenShift AI, it automatically provisions the necessary infrastructure and resources to host and serve your model. Under the hood, OpenShift AI uses Kubernetes and KServe to orchestrate the deployment and scaling of the model server containers.
-
-image::openshift-ai-add-model-server.png[Add Model Server]
-
-Please copy & paste from the right side of the table, and when ready, click on the *Create* button. Note, you only have to select these options, the rest can be left as default:
-
-[cols="1,1"] 
-|===
-| *Model server name*
-| Model Server
-| *Serving runtime*
-| OpenVINO Model Server
-|===
-
-image::openshift-ai-model-server-created.png[Model Server Created]
-
 ## Deploy the Model
 
-Now that the Model Server is created, we can deploy the RoShambo game model to the server. Click on the *Deploy model* button to the right of the Model Server.
+To deploy the model, you trained in the previous section using pipelines, click on the *Actions* button and select *Deploy*:
 
-image::openshift-ai-deploy-model.png[Deploy Model]
+image::ai-openshit-deploy-drop-button.png[Deploy dropdown menu]
 
-Please copy & paste from the right side of the table, and when ready, click on the *Create* button. Note, you only have to select these options, the rest can be left as default:
+Then select as target environmet the _wksp-{user}_, then verify the model name is correct, select _OpenVino_ as *Serving runtime*, and _onnx-1_ as *Model framework*.
 
-[cols="1,1"] 
-|===
-| *Model name*
-| RPS
-| *Model server*
-| Model Server
-| *Model framework*
-| onnx-1
-| *Existing data connection*
-| Shared Minio - Model
-| *Path*
-| rps/
-|===
+image::openshift-ai-target-runtime.png[First part of the configuration]
 
-image::openshift-ai-model-deployed.png[Model Deployed]
+Moreover, select to create a *Model route*, but unselect the *Requier token authentication*.
 
-If the model is successfully deployed you will see its status as green after a minute or two. This inference server is now exposed in the cluster we're working on.
+image::openshift-ai-model-route.png[Second part of the configuration]
 
-image::openshift-ai-model-deployed-status.png[Model Deployed Status]
+Finally verify the *Source model location* is pointing to the correct model location:
 
-TIP: The API endpoint provided by the Model Server follows a standard format, typically accepting input data (such as images or text) via `GRPC`, `REST`, and `HTTP` requests and returning the model's predictions in the response. This allows easy integration with client applications or services that need to consume the model's predictions.
+image::openshift-ai-model-location.png[Third part of the configuration]
+
+Push the *Deploy* button to start the process of inferencing the model.
+
+Push the *Data Science Project* section on the left menu, select the _wksp-{user}_ Project.
+
+Then go to *models*, and you'll see the inferencing model, with the current status.
+Wait till it is green.
+
+If you click on the _Internal and External endpoints details_ you'll see the URLs to access the inferenced model either from the cluster or from outside the cluster:
+
+image::openshift-ai-inferencing-model.png[Inferencing Model]
 
 ## Next Steps
 

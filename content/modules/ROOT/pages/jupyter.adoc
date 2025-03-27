@@ -90,6 +90,12 @@ registry = ModelRegistry(
 )
 ----
 
+You can get the `CLUSTER_DOMAIN` from the browser URL as shown in the following image:
+
+image::openshift-ai-cluster-domain.png[Cluster Domain]
+
+Then assign it to the notebook:
+
 image::openshift-ai-jupyter-notebook-run2-domain.png[Jupyter Notebook Change Domain]
 
 Go back to the  link:https://rhods-dashboard-redhat-ods-applications.{openshift_cluster_ingress_domain}[*OpenShift AI Dashboard*,role='params-link',window='_blank'] to check if the model is now listed in the *Model Registry* section.

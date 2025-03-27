@@ -2,31 +2,31 @@
 :imagesdir: ../assets/images
 :sectnums:
 
-In this section, we'll validate and test our deployed RoShambo game model using the Jupyter Hub environment in OpenShift AI. We'll navigate to the `modelmesh` directory, open the `rps_grpc` notebook, and run the steps to ensure that the model can accurately recognize the three hand gesture images provided in the notebook.
+In this section, we'll validate and test our deployed RoShambo game model using the Jupyter Hub environment in OpenShift AI. 
 
 ## Testing the Model Deployment
 
-In the `rps-game/roshambo-notebooks/modelmesh` directory, you'll find the `rps_grpc` notebook. Open this notebook to begin the validation process.
+Go back to the tab where you opened the Jupyter Notebook (in case you closed go to *Data Science Projects*, *wksp-{user}*, *workbenches* and open again)
 
-image::openshift-ai-jupyter-notebook-validation-grpc.png[Jupyter Notebook Validation]
+At the jupyter notebook, open the `3-yolo-rps-request-model.ipynb` and modify the following lines:
 
-TIP: The grpc_test notebook utilizes `gRPC` (gRPC Remote Procedure Call) for communication with the deployed model server. gRPC is a high-performance, open-source framework developed by Google that enables efficient and scalable communication between client and server applications.
+[source, python]
+----
+KSERVE_URL = "REPLACE"
+MODEL_NAME = "REPLACE"
+----
+
+With the inference URL and model created in the previous step:
+
+image::openshift-ai-inferencing-model-2.png[Inferencing Model]
 
 Let's run the notebook to test the deployed model. Hit the *Play* button in the upper hand area of the notebook to run the cells, firstly, to install the required libraries and then to set some variables for the inference URL and model/input names.
+Then load the image and sent it usingan HTTP call to the model.
+Finally, shows the result of the image detecting the correct shape, where in the first version, we got it an error:
 
-image::openshift-ai-jupyter-notebook-validation-2.png[Jupyter Notebook Validation]
-
-Here, we've got two cells with a preprocessing function (to load the image and return the image data), and an inference function (to send the image data to the model and get the prediction).
-
-image::openshift-ai-jupyter-notebook-validation-3.png[Jupyter Notebook Validation]
+image::openshift-ai-shape-v2.png[Jupyter Notebook Validation]
 
 TIP: The notebook loads the hand gesture images from a specified directory and preprocesses them to match the input requirements of the model. This involves resizing the images to the expected dimensions and normalizing the pixel values.
-
-Finally, we've got the cell to test the model with the three images provided in the `rps-game/roshambo-notebooks/modelmesh` directory. Run this cell to test the model.
-
-image::openshift-ai-jupyter-notebook-validation-4.png[Jupyter Notebook Validation]
-
-TIP: The preprocessed images are then sent as input data to the model server via gRPC requests. The model server receives the image data, performs the necessary inference calculations using the loaded model, and returns the predicted hand gesture class (rock, paper, or scissors).
 
 ## Next Steps
 
