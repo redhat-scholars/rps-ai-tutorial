@@ -120,9 +120,14 @@ Enter the repository URL from Gitea.
 
 image::openshift-ai-jupyter-notebook-clone-repo.png[Jupyter Notebook Clone Repository]
 
-Click on the *Clone* button to clone the repository, and then navigate to the `rps-game/roshambo-notebooks` folder to access the notebooks we'll be working with today.
+Click on the *Clone* button to clone the repository, and then navigate to the `rps-game/roshambo-notebooks` folder to access the notebooks.
 
 image::openshift-ai-jupyter-notebook-repo.png[Jupyter Notebook Repository]
+
+Swich to the `kubecon-eu-2025` branch that we'll be working with today.
+
+image::openshift-ai-checkeout-branch.png[Jupyter Notebook Checkout Repository]
+
 
 ## Summary
 
