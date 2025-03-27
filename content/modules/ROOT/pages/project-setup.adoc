@@ -71,8 +71,6 @@ The data connection to Minio to store the models and the pipelines have been alr
 
 image::openshift-ai-connections.png[Create Data Connection]
 
-image::openshift-ai-create-connection-form.png[Create Data Connection Form]
-
 ### Creating a Workbench for Jupyter Notebooks
 
 Speaking of notebooks, let's create a workbench where we can run our Jupyter Notebooks. Scroll up to the *Workbench* tab and click on the *Create workbench* button.
