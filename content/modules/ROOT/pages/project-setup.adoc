@@ -122,11 +122,6 @@ image::openshift-ai-jupyter-notebook-clone-repo.png[Jupyter Notebook Clone Repos
 
 Click on the *Clone* button to clone the repository.
 
-Click on the Git icon on the left side vertical menu, then switch the branch to *kubecon-eu-2025*.
-
-image::openshift-ai-jupyter-notebook-switch-branch.png[Jupyter Notebook Switch Branch]
-
-IMPORTANT: Don't forget to switch the branch!
 
 Go back to the file discovery and navigate to the `rps-game/roshambo-notebooks` folder to access the notebooks.
 
@@ -135,6 +130,8 @@ image::openshift-ai-jupyter-notebook-repo.png[Jupyter Notebook Repository]
 Swich to the `kubecon-eu-2025` branch that we'll be working with today.
 
 image::openshift-ai-checkeout-branch.png[Jupyter Notebook Checkout Repository]
+
+IMPORTANT: Don't forget to switch the branch!
 
 
 ## Summary
