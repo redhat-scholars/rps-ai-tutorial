@@ -12,8 +12,8 @@ At the jupyter notebook, open the `3-yolo-rps-request-model.ipynb` and modify th
 
 [source, python]
 ----
-KSERVE_URL = "REPLACE"
-MODEL_NAME = "REPLACE"
+KSERVE_URL = "REPLACE_WITH_MODEL_ENDPOINT_URL"
+MODEL_NAME = "REPLACE_WITH_MODEL_ENDPOINT_NAME"
 ----
 
 With the inference URL and model created in the previous step:
