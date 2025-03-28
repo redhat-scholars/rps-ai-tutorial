@@ -59,4 +59,4 @@ Microservices Architecture Compatibility: OVMS is ideal for microservices-based 
 
 Dynamic Model Management: When serving multiple models, OVMS allows for runtime configuration changes without needing to restart the server, enabling the addition, deletion, or updating of models on-the-fly.
 
-For a quick start with OpenVINO Model Server, refer to the official documentation's quickstart guide. https://github.com/openvinotoolkit/model_server
+For a quick start with OpenVINO Model Server, refer to the official documentation's link:https://github.com/openvinotoolkit/model_server[*quickstart guide*]. 
