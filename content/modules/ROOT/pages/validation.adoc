@@ -10,7 +10,7 @@ Go back to the tab where you opened the Jupyter Notebook (in case you closed go 
 
 At the jupyter notebook, open the `3-yolo-rps-request-model.ipynb` and modify the following lines:
 
-[source, python]
+[source,python,role="copypaste",subs=attributes+]
 ----
 KSERVE_URL = "https://yolo-rps-wksp-{user}.{openshift_cluster_ingress_domain}"
 MODEL_NAME = "yolo-rps"
