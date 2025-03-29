@@ -12,12 +12,11 @@ At the jupyter notebook, open the `3-yolo-rps-request-model.ipynb` and modify th
 
 [source, python]
 ----
-KSERVE_URL = "REPLACE_WITH_MODEL_ENDPOINT_URL"
-MODEL_NAME = "REPLACE_WITH_MODEL_ENDPOINT_NAME"
+KSERVE_URL = "https://yolo-rps-wksp-{user}.{openshift_cluster_ingress_domain}"
+MODEL_NAME = "yolo-rps"
 ----
 
-With the inference URL and model created in the previous step:
-
+TIP: You find the inference API URL and the model name in the Model Serving section as discussed in the previous section:
 image::openshift-ai-inferencing-model-2.png[Inferencing Model]
 
 Let's run the notebook to test the deployed model. Hit the *Play* button in the upper hand area of the notebook to run the cells, firstly, to install the required libraries and then to set some variables for the inference URL and model/input names.
