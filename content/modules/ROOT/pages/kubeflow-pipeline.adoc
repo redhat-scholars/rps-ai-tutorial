@@ -26,7 +26,7 @@ if __name__ == '__main__':
         "model_name": "yolov11",
         "version": "v2",
         "user": "wksp-{user}",
-        "cluster_domain": " {openshift_cluster_ingress_domain}",
+        "cluster_domain": "{openshift_cluster_ingress_domain}",
     }
 ----
 
@@ -37,19 +37,31 @@ Now go to the top-left of the notebook menu bar and click to the play icon to st
 
 image::openshift-ai-jupyter-notebook-run3-pipeline3.png[Jupyter Notebook Pipeline]
 
-image::openshift-ai-jupyter-notebook-run3-pipeline4.png[Jupyter Notebook Pipeline]
+The KFP is now starting on the cluster and you can monitor the progress the dashboard.
+Go back to the  link:https://rhods-dashboard-redhat-ods-applications.{openshift_cluster_ingress_domain}[*OpenShift AI Dashboard*,role='params-link',window='_blank']. From the left-side menu, click to *Experiments* then *Experiments and runs*. From the list, you should see a *kfp-training* pipeline running.
+ 
 
 image::openshift-ai-jupyter-notebook-run3-pipeline5.png[Jupyter Notebook Pipeline]
 
+Click to the pipeline to see all details.
+
 image::openshift-ai-jupyter-notebook-run3-pipeline6.png[Jupyter Notebook Pipeline]
+
+You should see now the graphical representation of the pipeline with all the components involved. 
+
+Click to any of them to review status of logs.
 
 image::openshift-ai-jupyter-notebook-run3-pipeline7.png[Jupyter Notebook Pipeline]
 
+After the Kubeflow pipeline successful run, the new model has been pushed to the Model Registry that you can review.
+
+Navigate to the left-side menu, go to *Model Registry* and click to the newly created *v2*.
+
 image::openshift-ai-jupyter-notebook-run3-pipeline8.png[Jupyter Notebook Pipeline]
 
+Review all details such as storage location and properties.
+
 image::openshift-ai-jupyter-notebook-run3-pipeline9.png[Jupyter Notebook Pipeline]
-
-
 
 
 ## Next Steps
