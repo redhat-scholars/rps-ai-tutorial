@@ -112,4 +112,4 @@ Click to *v1* to access all details.
 image::openshift-ai-jupyter-notebook-run2-registry3.png[Jupyter Notebook Registry]
 
 
-Nice, what about if we want to automate all of this? In the next section!
+Nice, what about if we want to automate all of this so we can work on a better trained model? In the next section!
