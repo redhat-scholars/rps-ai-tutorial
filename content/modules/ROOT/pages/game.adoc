@@ -22,8 +22,18 @@ image::openshift-ai-game-topology-route-backend.png[AI Game Topology]
 
 You'll be prompted to enter the credentials, which are below, but can also be found in the `application.properties` file in the `roshambo-backend` directory of the project.
 
-- Username: `admin`
-- Password: `ae7cdd2406201487bcce77064b5fe10c`
+Username:
+
+[source,text,role="copypaste",subs=attributes+]
+----
+admin
+----
+
+Password:
+[source,text,role="copypaste",subs=attributes+]
+----
+ae7cdd2406201487bcce77064b5fe10c
+----
 
 Once you've logged in, you'll see the administration dashboard where you can start the game by clicking the *New Game* button.
 
