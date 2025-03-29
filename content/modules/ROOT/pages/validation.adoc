@@ -27,6 +27,8 @@ image::openshift-ai-shape-v2.png[Jupyter Notebook Validation]
 
 TIP: The notebook loads the hand gesture images from a specified directory and preprocesses them to match the input requirements of the model. This involves resizing the images to the expected dimensions and normalizing the pixel values.
 
+Yay! It works much better.
+
 ## Next Steps
 
-After running the notebook, you should see the model's predictions for the three hand gesture images. If the model correctly identifies the hand gestures, then the deployment is successful. In the next section, we'll deploy the game application using OpenShift GitOps and configure it to communicate with the model server for real-time hand gesture classification.
+After running the notebook, you should see the model's prediction  hand gesture image. If the model correctly identifies the hand gestures, then the deployment is successful. In the next section, we'll deploy the game application using Argo CD and configure it to communicate with the model server for real-time hand gesture classification.
