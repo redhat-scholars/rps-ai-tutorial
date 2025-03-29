@@ -2,7 +2,7 @@
 :imagesdir: ../assets/images
 :sectnums:
 
-In this section, we'll deploy our trained Rock, Paper, Scissors game model using the Model Server in OpenShift AI. We'll create a Data Connection to access the model artifact and then set up a Model Server to expose the model as an API endpoint. This will enable seamless integration with the RoShambo game application when deployed.
+In this section, we'll deploy our trained RoShambo game model using the Model Server in OpenShift AI. We'll create a Data Connection to access the model artifact and then set up a Model Server to expose the model as an API endpoint. This will enable seamless integration with the RoShambo game application when deployed.
 
 ## Deploy the Model
 
@@ -39,39 +39,137 @@ image::openshift-ai-model-location.png[Third part of the configuration]
 
 Push the *Deploy* button to start the process of inferencing the model.
 
-Push the *Data Science Project* section on the left menu, select the _wksp-{user}_ Project.
+You should see now the current status with model deployment in progress with KServe and OpenVINO. Wait a few minutes until the Inference API is up and running and status is green.
 
-Then go to *models*, and you'll see the inferencing model, with the current status.
-Wait till it is green.
+TIP: If you don't see the green tick after 1 min or so, try to refresh the page
 
 If you click on the _Internal and External endpoints details_ you'll see the URLs to access the inferenced model either from the cluster or from outside the cluster:
 
 image::openshift-ai-inferencing-model.png[Inferencing Model]
 
+## KServe and InferenceService
+
+You can also review the deployment with KServe on the cluster. 
+
+Go to the link:{console_url}[*OpenShift Web Console*,role='params-link',window='_blank'].
+
+Select your AI project so *wskp-{user}*.
+
+Find a KNative Service named *yolo-rps-predictor*.
+
+image::openshift-ai-inferencing-model.png[openshift-ai-model-kserve.png]
+
+You can review the newly created link:{console_url}/k8s/ns/wksp-{user}/serving.kserve.io~v1beta1~InferenceService/yolo-rps/yaml[InferenceService]
+
+[source,yaml,role="copypaste",subs=attributes+]
+----
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  annotations:
+    openshift.io/display-name: yolo-rps
+    serving.knative.openshift.io/enablePassthrough: 'true'
+    sidecar.istio.io/inject: 'true'
+    sidecar.istio.io/rewriteAppHTTPProbers: 'true'
+  name: yolo-rps
+  namespace: wksp-{user}
+  finalizers:
+    - inferenceservice.finalizers
+  labels:
+    opendatahub.io/dashboard: 'true'
+spec:
+  predictor:
+    maxReplicas: 1
+    minReplicas: 1
+    model:
+      modelFormat:
+        name: onnx
+        version: '1'
+      name: ''
+      resources:
+        limits:
+          cpu: '2'
+          memory: 4Gi
+        requests:
+          cpu: '1'
+          memory: 1Gi
+      runtime: yolo-rps
+      storage:
+        key: aws-connection-my-storage
+        path: models/user9-yolo-rps-v2
+----
+
+and link:{console_url}/k8s/ns/wksp-{user}/k8s/ns/wksp-{user}/serving.kserve.io~v1alpha1~ServingRuntime/yolo-rps/yaml[ServingRuntime]
+
+
+[source,yaml,role="copypaste",subs=attributes+]
+----
+apiVersion: serving.kserve.io/v1alpha1
+kind: ServingRuntime
+metadata:
+  annotations:
+    opendatahub.io/accelerator-name: ''
+    opendatahub.io/apiProtocol: REST
+    opendatahub.io/template-display-name: OpenVINO Model Server
+    opendatahub.io/template-name: kserve-ovms
+    openshift.io/display-name: yolo-rps
+  name: yolo-rps
+  namespace: wksp-{user}
+  labels:
+    opendatahub.io/dashboard: 'true'
+spec:
+  annotations:
+    prometheus.io/path: /metrics
+    prometheus.io/port: '8888'
+  containers:
+    - args:
+        - '--model_name={{.Name}}'
+        - '--port=8001'
+        - '--rest_port=8888'
+        - '--model_path=/mnt/models'
+        - '--file_system_poll_wait_seconds=0'
+        - '--grpc_bind_address=0.0.0.0'
+        - '--rest_bind_address=0.0.0.0'
+        - '--target_device=AUTO'
+        - '--metrics_enable'
+      image: 'quay.io/modh/openvino_model_server@sha256:e4ece481b8dd866163da7ffcd3e95389ef7fb3d32a9a0dbb056b07839652a4f7'
+      name: kserve-container
+      ports:
+        - containerPort: 8888
+          protocol: TCP
+      volumeMounts:
+        - mountPath: /dev/shm
+          name: shm
+  multiModel: false
+  protocolVersions:
+    - v2
+    - grpc-v2
+  supportedModelFormats:
+    - autoSelect: true
+      name: openvino_ir
+      version: opset13
+    - name: onnx
+      version: '1'
+    - autoSelect: true
+      name: tensorflow
+      version: '1'
+    - autoSelect: true
+      name: tensorflow
+      version: '2'
+    - autoSelect: true
+      name: paddle
+      version: '2'
+    - autoSelect: true
+      name: pytorch
+      version: '2'
+  volumes:
+    - emptyDir:
+        medium: Memory
+        sizeLimit: 2Gi
+      name: shm
+----
+
 ## Next Steps
 
-Now that we have deployed the RoShambo game model using the Model Server in OpenShift AI, we can integrate it with the game application to enable AI-powered gameplay. In the next section, we'll test the inferencing endpoint by querying the model with sample input data and verifying the predictions.
+Now that we have deployed the V2 RoShambo game model using the Model Server in OpenShift AI, we can integrate it with the game application to enable AI-powered gameplay. In the next section, we'll test in the Jupyter notebook the inferencing endpoint by querying the model with sample input data and verifying the predictions.
 
-### OpenVINO Model Server
-
-OpenVINO Model Server (OVMS) is a high-performance system designed to serve machine learning models optimized by the OpenVINO toolkit. It enables efficient deployment of AI models in production environments, facilitating scalable and reliable inference across various applications.
-
-== Key Features of OpenVINO Model Server
-
-Flexible Deployment: OVMS supports deployment across diverse environments, including Docker containers, bare metal servers, and orchestration platforms like Kubernetes and OpenShift.
-
-Standardized APIs: It provides REST and gRPC application programming interfaces, allowing client applications written in any programming language that supports these protocols to perform remote inference.
-
-Efficient Resource Utilization: OVMS is optimized for both horizontal and vertical scaling, ensuring efficient use of computational resources to meet varying workload demands.
-
-Secure Model Management: Models are stored either locally or in remote object storage services, and are not directly exposed to client applications, enhancing security and access control.
-
-== Benefits of Using OpenVINO Model Server
-
-Simplified Client Integration: Clients require minimal updates since the server abstracts the model details, providing a stable interface for inference requests.
-
-Microservices Architecture Compatibility: OVMS is ideal for microservices-based applications, facilitating seamless integration into cloud environments and container orchestration systems.
-
-Dynamic Model Management: When serving multiple models, OVMS allows for runtime configuration changes without needing to restart the server, enabling the addition, deletion, or updating of models on-the-fly.
-
-For a quick start with OpenVINO Model Server, refer to the official documentation's link:https://github.com/openvinotoolkit/model_server[*quickstart guide*]. 
