@@ -57,7 +57,7 @@ Select your AI project so *wskp-{user}*.
 
 Find a KNative Service named *yolo-rps-predictor*.
 
-image::openshift-ai-inferencing-model.png[openshift-ai-model-kserve.png]
+image::openshift-ai-model-kserve.png[Model deployed]
 
 You can review the newly created link:{console_url}/k8s/ns/wksp-{user}/serving.kserve.io~v1beta1~InferenceService/yolo-rps/yaml[InferenceService]
 
