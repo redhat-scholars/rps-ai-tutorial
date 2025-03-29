@@ -64,7 +64,7 @@ NOTE: Some setting such as the notebook connection to Minio has been automatical
 ## Change this before continue
 user = "{user}"
 
-model_path_s3 = f"{user}-yolo-rps"
+model_path_s3 = "{user}-yolo-rps"
 print(model_path_s3)
 ----
 
