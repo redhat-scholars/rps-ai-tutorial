@@ -14,8 +14,18 @@ image::openshift-login-options.png[OpenShift Page Login]
 
 You'll be prompted to log in with your credentials, here they are as a reference:
 
-- Username: `{user}`
-- Password: `{password}`
+Username:
+[source,text,role="copypaste",subs=attributes+]
+----
+{user}
+----
+
+Password:
+
+[source,text,role="copypaste",subs=attributes+]
+----
+{password}
+----
 
 Once you're logged in, you'll be at the OpenShift dashboard.
 
