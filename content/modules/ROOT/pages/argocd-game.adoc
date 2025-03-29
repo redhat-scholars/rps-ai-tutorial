@@ -10,7 +10,9 @@ image::roshambo-architecture.png[Architecture]
 
 ## Creating a new AI Game application
 
-Let's return to the Argo CD dashboard and create a new application for the AI Game. Select *+ NEW APP* from the Argo CD web interface, and fill in the following details:
+Let's return to the link:https://argocd-server-argocd-{user}.{openshift_cluster_ingress_domain}/[Argo CD dashboard,window='_blank'] and create a new application for the AI Game. 
+
+Select *+ NEW APP* from the Argo CD web interface, and fill in the following details:
 
 [cols="1,1"] 
 |===
@@ -33,7 +35,7 @@ Let's return to the Argo CD dashboard and create a new application for the AI Ga
 | *Namespace*
 | game-{user}
 | *Helm Parameters: backend.ainamespace*
-| game-{user}
+| wskp-{user}
 |===
 
 image::openshift-ai-argocd-ai-game.png[Argo CD AI Proxy]

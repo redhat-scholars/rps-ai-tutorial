@@ -21,7 +21,6 @@
 
 * Deploying with GitOps
 ** xref:argocd-proxy.adoc[Deploying the AI Service]
-** xref:jupyter-test.adoc[Testing the Service]
 ** xref:argocd-game.adoc[Deploying the Game]
 
 * Game Interaction
