@@ -59,7 +59,7 @@ Navigate to the left-side menu, go to *Model Registry* and click to the newly cr
 
 image::openshift-ai-jupyter-notebook-run3-pipeline8.png[Jupyter Notebook Pipeline]
 
-Review all details such as storage location and properties.
+Review all details such as storage location and properties such as Precision and Recall.
 
 image::openshift-ai-jupyter-notebook-run3-pipeline9.png[Jupyter Notebook Pipeline]
 
