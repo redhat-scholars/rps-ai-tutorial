@@ -58,7 +58,7 @@ Select *+ NEW APP* from the Argo CD web interface, and fill in the following det
 | https://kubernetes.default.svc
 | *Namespace*
 | game-{user}
-| *Helm Parameters: ai.model_host
+| *Helm Parameters: ai.model_host*
 | yolo-rps-wksp-{user}.{openshift_cluster_ingress_domain}
 |===
 
