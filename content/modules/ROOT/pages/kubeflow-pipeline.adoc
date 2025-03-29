@@ -49,7 +49,7 @@ image::openshift-ai-jupyter-notebook-run3-pipeline6.png[Jupyter Notebook Pipelin
 
 You should see now the graphical representation of the pipeline with all the components involved. 
 
-Click to any of them to review status of logs.
+Click to any of them to review status of logs. Note that the pipeline is running for a couple of minutes to finish.
 
 image::openshift-ai-jupyter-notebook-run3-pipeline7.png[Jupyter Notebook Pipeline]
 
