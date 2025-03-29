@@ -38,12 +38,12 @@ Now go to the top-left of the notebook menu bar and click to the play icon to st
 image::openshift-ai-jupyter-notebook-run3-pipeline3.png[Jupyter Notebook Pipeline]
 
 The KFP is now starting on the cluster and you can monitor the progress the dashboard.
-Go back to the  link:https://rhods-dashboard-redhat-ods-applications.{openshift_cluster_ingress_domain}[*OpenShift AI Dashboard*,role='params-link',window='_blank']. From the left-side menu, click to *Experiments* then *Experiments and runs*. From the list, you should see a *kfp-training* pipeline running.
+Go back to the  link:https://rhods-dashboard-redhat-ods-applications.{openshift_cluster_ingress_domain}[*OpenShift AI Dashboard*,role='params-link',window='_blank']. From the left-side menu, click to *Experiments* then *Experiments and runs*. From the list, you should see a *kfp-training* experiment running.
  
 
 image::openshift-ai-jupyter-notebook-run3-pipeline5.png[Jupyter Notebook Pipeline]
 
-Click to the pipeline to see all details.
+Click to the Kubeflow pipeline to see all details.
 
 image::openshift-ai-jupyter-notebook-run3-pipeline6.png[Jupyter Notebook Pipeline]
 

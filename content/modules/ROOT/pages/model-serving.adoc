@@ -10,7 +10,23 @@ To deploy the model, you trained in the previous section using pipelines, click 
 
 image::ai-openshit-deploy-drop-button.png[Deploy dropdown menu]
 
-Then select as target environmet the _wksp-{user}_, then verify the model name is correct, select _OpenVino_ as *Serving runtime*, and _onnx-1_ as *Model framework*.
+Then select as target environment your workspace:
+
+[source,text,role="copypaste",subs=attributes+]
+----
+wksp-{user}
+----
+
+Then change the model name to:
+
+[source,text,role="copypaste",subs=attributes+]
+----
+yolo-rps
+----
+
+Select *OpenVINO Model Server* as *Serving runtime*.
+
+Select *onnx-1* as *Model framework*.
 
 image::openshift-ai-target-runtime.png[First part of the configuration]
 
