@@ -8,21 +8,20 @@ In this section, we'll deploy our trained Rock, Paper, Scissors game model using
 
 To deploy the model, you trained in the previous section using pipelines, click on the *Actions* button and select *Deploy*:
 
-image::ai-openshit-deploy-drop-button.png[Deploy dropdown menu]
+image::ai-openshift-deploy-drop-button.png[Deploy dropdown menu]
 
-Then select as target environment your workspace:
+From the popup menu, select as project your workspace *wksp-{user}*
 
-[source,text,role="copypaste",subs=attributes+]
-----
-wksp-{user}
-----
+image::openshift-ai-model-project.png[Deploy dropdown menu]
 
-Then change the model name to:
+In the following form, change the model name to:
 
 [source,text,role="copypaste",subs=attributes+]
 ----
 yolo-rps
 ----
+
+IMPORTANT: The model name will be used in the inference API and in the instructions we refer always to yolo-rps, make sure you are putting the right name here.
 
 Select *OpenVINO Model Server* as *Serving runtime*.
 
