@@ -93,11 +93,13 @@ Click to *Attach*.
 
 image::openshift-ai-create-workbench-connection-storage-attach.png[Create Workbench Connection]
 
-Then click on the *Create workbench* button.
+Then click to the *Create workbench* button.
 
 You'll need to wait just a few minutes for the workbench to be created, but once it's ready, click the *Open* button to access the Jupyter Notebook environment.
 
 NOTE: During this process, the notebook image is being pulled from the container registry, and pods are being created to run the notebook server.
+
+Click to *Open* to start the workbench.
 
 image::openshift-ai-workbench-ready.png[Workbench Ready]
 
