@@ -90,11 +90,7 @@ registry = ModelRegistry(
 )
 ----
 
-You can get the `CLUSTER_DOMAIN` from the browser URL as shown in the following image:
-
-image::openshift-ai-cluster-domain.png[Cluster Domain]
-
-Then assign it to the notebook:
+It should look like this in Notebook.
 
 image::openshift-ai-jupyter-notebook-run2-domain.png[Jupyter Notebook Change Domain]
 
