@@ -4,13 +4,28 @@
 
 The RoShambo game supports a multiplayer mode where players are automatically assigned to teams and compete against each other. Let's see who has the skill, and luck, to win the most games!
 
+## Enable multiplayer mode
+
+In order to enable the multiplayer mode for your instance, go to the us delivery tool for Kubernetes provided in the OpenShift GitOps Operator. You can access Argo CD either from the OpenShift Web Console app launcher, or you can visit the Argo CD dashboard using this link:https://argocd-server-argocd-{user}.{openshift_cluster_ingress_domain}[*Argo CD Dashboard*,role='params-link',window='_blank'].
+
+Access the *rps-game* Argo Application, then from the upper side menu click to *DETAILS*. Switch to the *Parameters* tab and click to *SAVE*.
+
+The backend is re-deployed and the app is now supporting multiplayer mode. Give the frontend URL to your users and start the game from the backend.
+
+image::argocd-multiplayer-enabled.png[Multiplayer Enabled]
+
+
+## Accessing the Game at KubeCon EU 2025
+
 NOTE: Swag may be awarded to the best player!
 
-## Accessing the Game
 
-We'll be using an instance of the game, and model, hosted on the `admin` OpenShift user's namespace. To access the game, you'll need to use this following URL:
+We'll be using an instance of the game, and model, hosted on the cluster(s). 
 
-link:https://openshift-gitops-server-openshift-gitops.{openshift_cluster_ingress_domain}[*RoShambo Multiplayer Link*,role='params-link',window='_blank'].
+
+To access the game from your laptop, you'll need to use this following URL:
+
+link:https://bit.ly/rps-kubecon25[*RoShambo Multiplayer Link*,role='params-link',window='_blank'].
 
 image::ai-game-multiplayer.png[AI Game Camera Result]
 
@@ -22,4 +37,4 @@ Good luck!
 
 ## Next Steps
 
-After we finish up, we'll summarize your learning today, and provide some handy resources to help you continue your journey with OpenShiftAI and GitOps.
+After we finish up, we'll summarize your learning today, and provide some handy resources to help you continue your journey with Kubeflow, OpenVINO, KServe and Argo CD.

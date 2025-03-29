@@ -49,7 +49,7 @@ image::ai-dashboard.png[Developer Hub Perspective]
 ////
 ### Argo CD
 
-Let's look at *Argo CD*, a declarative, GitOps continuous delivery tool for Kubernetes provided in the OpenShift GitOps Operator. You can access Argo CD either from the OpenShift Web Console app launcher, or you can visit the Argo CD dashboard using this link:https://openshift-gitops-server-openshift-gitops.{openshift_cluster_ingress_domain}[*Argo CD Dashboard*,role='params-link',window='_blank'].
+Let's look at *Argo CD*, a declarative, GitOps continuous delivery tool for Kubernetes provided in the OpenShift GitOps Operator. You can access Argo CD either from the OpenShift Web Console app launcher, or you can visit the Argo CD dashboard using this link:https://argocd-server-argocd-{user}.{openshift_cluster_ingress_domain}[*Argo CD Dashboard*,role='params-link',window='_blank'].
 
 image::argocd-button.png[Argo CD Route Button]
 

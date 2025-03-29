@@ -2,16 +2,16 @@
 :imagesdir: ../assets/images
 :sectnums:
 
-Congratulations on completing the *Rock, Scissors, Paper: An AI-powered Interactive Game with OpenShift AI and OpenShift GitOps* lab! Throughout this lab, you've gained hands-on experience with various OpenShift technologies and learned how to develop, deploy, and manage an AI-powered game application.
+Congratulations on completing the * Rock, Paper, Scissors! Build an AI-powered Interactive Game With Argo CD and Kubeflow. * lab! Throughout this lab, you've gained hands-on experience with various OpenShift technologies and learned how to develop, deploy, and manage an AI-powered game application.
 
 ## Lab Summary
 Let's recap the key points and achievements from this lab:
 
-- You set up an OpenShift AI environment and created a Data Science project.
+- You set up an OpenShift AI environment and created a Data Science project
 - You cloned the RoShambo game repository and explored the validation notebook to understand the AI model.
-- You ran the data science pipeline to automate the model construction process.
-- You deployed the AI model using the Model Server in OpenShift AI and tested its functionality.
-- You deployed the AI proxy and game application using OpenShift GitOps with Argo CD.
+- You ran Kubeflow pipeline to automate the model construction process.
+- You deployed the AI model using OpenVINO and KServe and tested its functionality.
+- You deployed the AI proxy and game application with Argo CD and Helm.
 - You played the RoShambo game in different modes, including dummy mode, camera mode, and multiplayer mode.
 - You learned about the technical details and architectures behind each component of the game application.
 
