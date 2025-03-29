@@ -2,7 +2,7 @@
 :imagesdir: ../assets/images
 :sectnums:
 
-In this section, we'll deploy our trained RoShambo game model using the Model Server in OpenShift AI. We'll create a Data Connection to access the model artifact and then set up a Model Server to expose the model as an API endpoint. This will enable seamless integration with the RoShambo game application when deployed.
+In this section, we'll deploy our trained Rock, Paper, Scissors game model using the Model Server in OpenShift AI. We'll create a Data Connection to access the model artifact and then set up a Model Server to expose the model as an API endpoint. This will enable seamless integration with the RoShambo game application when deployed.
 
 ## Deploy the Model
 
