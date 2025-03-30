@@ -35,7 +35,7 @@ Select *+ NEW APP* from the Argo CD web interface, and fill in the following det
 | *Namespace*
 | game-{user}
 | *Helm Parameters: backend.ainamespace*
-| wskp-{user}
+| game-{user}
 |===
 
 image::openshift-ai-argocd-ai-game.png[Argo CD AI Proxy]
