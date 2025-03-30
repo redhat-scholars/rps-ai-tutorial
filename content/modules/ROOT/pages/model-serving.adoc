@@ -59,7 +59,7 @@ Find a KNative Service named *yolo-rps-predictor*.
 
 image::openshift-ai-model-kserve.png[Model deployed]
 
-You can review the newly created link:{console_url}/k8s/ns/wksp-{user}/serving.kserve.io%7Ev1beta1%7EInferenceService/yolo-rps/yaml[InferenceService]
+You can review the newly created link:{console_url}/k8s/ns/wksp-{user}/serving.kserve.io%7Ev1beta1%7EInferenceService/yolo-rps/yaml[InferenceService,role='params-link',window='_blank']
 
 [source,yaml,role="copypaste",subs=attributes+]
 ----
@@ -99,7 +99,7 @@ spec:
         path: models/user9-yolo-rps-v2
 ----
 
-and link:{console_url}/k8s/ns/wksp-{user}/k8s/ns/wksp-{user}/serving.kserve.io%7Ev1alpha1%7EServingRuntime/yolo-rps/yaml[ServingRuntime]
+and link:{console_url}/k8s/ns/wksp-{user}/k8s/ns/wksp-{user}/serving.kserve.io%7Ev1alpha1%7EServingRuntime/yolo-rps/yaml[ServingRuntime,role='params-link',window='_blank']
 
 
 [source,yaml,role="copypaste",subs=attributes+]
