@@ -101,7 +101,6 @@ spec:
 
 and link:{console_url}/k8s/ns/wksp-{user}/k8s/ns/wksp-{user}/serving.kserve.io%7Ev1alpha1%7EServingRuntime/yolo-rps/yaml[ServingRuntime,role='params-link',window='_blank']
 
-
 [source,yaml,role="copypaste",subs=attributes+]
 ----
 apiVersion: serving.kserve.io/v1alpha1
