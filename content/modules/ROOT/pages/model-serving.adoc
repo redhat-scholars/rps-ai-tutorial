@@ -99,7 +99,7 @@ spec:
         path: models/user9-yolo-rps-v2
 ----
 
-and link:{console_url}/k8s/ns/wksp-{user}/k8s/ns/wksp-{user}/serving.kserve.io%7Ev1alpha1%7EServingRuntime/yolo-rps/yaml[ServingRuntime,role='params-link',window='_blank']
+and link:{console_url}/k8s/ns/wksp-{user}/serving.kserve.io%7Ev1alpha1%7EServingRuntime/yolo-rps/yaml[ServingRuntime,role='params-link',window='_blank']
 
 [source,yaml,role="copypaste",subs=attributes+]
 ----
