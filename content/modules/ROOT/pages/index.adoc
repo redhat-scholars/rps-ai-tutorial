@@ -46,7 +46,13 @@ image:kubeflow-arch.png[]
 == What is KServe
 
 link:https://kserve.github.io/website/master/[KServe,window='_blank'] is a standard Model Inference Platform on Kubernetes, built for highly scalable use cases.
-It provides performant, standardized inference protocol across ML frameworks and it support modern serverless inference workload on Kubernetes with Autoscaling including Scale to Zero on GPU with link:knative.dev[KNativewindow='_blank'].
+
+- Provides performant, standardized inference protocol across ML frameworks including OpenAI specification for generative models.
+- Support modern serverless inference workload with request based autoscaling including scale-to-zero on CPU and GPU.
+- Provides high scalability, density packing and intelligent routing using ModelMesh.
+- Advanced deployments for canary rollout, pipeline, ensembles with InferenceGraph
+
+image:kserve-arch.png[]
 
 == What is OpenVINO Model Server
 
