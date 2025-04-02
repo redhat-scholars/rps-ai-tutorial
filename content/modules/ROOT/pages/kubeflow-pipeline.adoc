@@ -86,4 +86,4 @@ image::openshift-ai-jupyter-notebook-run3-pipeline9.png[Jupyter Notebook Pipelin
 
 ## Next Steps
 
-With our model developed and trained, we're now ready to serve it using the Model Server in OpenShift AI. In the next section, we'll create a Model Server and test the served model.
+With our model developed and trained, we're now ready to serve it using the Model Server with OpenVINO and KServe. In the next section, we'll create a Model Server with Argo CD and test the served model.

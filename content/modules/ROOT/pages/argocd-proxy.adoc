@@ -2,35 +2,8 @@
 :imagesdir: ../assets/images
 :sectnums:
 
-In this section, we'll deploy the proxy and game application using Argo CD, a declarative GitOps continuous delivery tool for Kubernetes. Argo CD follows the GitOps principles, where the desired state of the application is declaratively defined in a Git repository, and Argo CD ensures that the actual state of the deployed application matches the desired state. Argo CD continuously monitors the desired state of the application in the Git repository and automatically applies the changes to the Kubernetes cluster.
+In this section, we'll deploy the a Python microservice called AI Proxy Service that interacts with the model and does all the necessary image manipulations.
 
-An Argo CD instance has been already preinstalled and configured in your argocd-{user} in your user namespace. This Argo CD instance comes from the OpenShift GitOps Operator.
-
-Go to the link:{console_url}[*OpenShift Web Console*,role='params-link',window='_blank'], select argocd-{user} project.
-
-You can access the Argo CD web interface by clicking on the Argo CD *route URL*. The URL is displayed in the *Topology* view, and named `argocd-server`.
-
-image::openshift-ai-argocd-topology.png[Argo CD Topology]
-
-IMPORTANT: Make sure you access ArgoCD through the `argocd-server` route URL, and *not* the *Cluster Argo CD* route. This is to ensure your permissions are correctly set up.
-
-The Argo CD web interface is protected by OAuth, and you can log in using your cluster credentials:
-
-[source,text,role="copypaste",subs=attributes+]
-----
-{user}
-----
-
-[source,text,role="copypaste",subs=attributes+]
-----
-{password}
-----
-
-Then authorize the Argo CD application to access the OpenShift API. Now, you can access the Argo CD web interface and manage the applications.
-
-image::openshift-ai-argocd-login.png[Argo CD Login]
-
-TIP: Argo CD provides a web interface and a command-line interface (CLI) for managing applications. You can view the status of the deployed applications, perform manual synchronization, rollback to previous versions, and manage application configurations.
 
 ## Creating a new AI Proxy application
 
@@ -80,5 +53,8 @@ image::openshift-ai-argocd-ai-proxy-topology.png[Argo CD AI Proxy Topology]
 
 ## Next Steps
 
-In this section, you learned how to deploy the AI proxy on OpenShift using GitOps principles with Argo CD. You created an Argo CD instance in the user namespace, configured applications for the AI proxy and the game, and managed their deployment using GitOps principles. Let's now test out the functionality of this proxy through Jupyter Notebooks.
+In this section, you learned how to deploy the AI proxy with Argo CD via Helm chart.
+
+Now let's deploy the game with Argo CD with another Helm chart.
+
 
