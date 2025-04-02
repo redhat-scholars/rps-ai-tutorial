@@ -1,4 +1,4 @@
-# Deploying the application with GitOps
+# Model Serving with GitOps
 :imagesdir: ../assets/images
 :sectnums:
 
