@@ -22,7 +22,7 @@ image::openshift-ai-dashboard-view.png[OpenShift AI Dashboard]
 
 ### Applications
 
-The applications section provides access to enabled applications that extend the capabilities of OpenShift AI such as Jupyter Hub link:https://jupyter.org/[Jupyter Hub,role='params-link',window='_blank'], Anaconda link:https://www.anaconda.com/[Anaconda,role='params-link',window='_blank'], and Starburst link:https://www.starburst.io/[Starburst,role='params-link',window='_blank'].
+The applications section provides access to enabled applications that extend the capabilities of OpenShift AI such as link:https://jupyter.org/[Jupyter Hub,role='params-link',window='_blank'], link:https://www.anaconda.com/[Anaconda,role='params-link',window='_blank'], and link:https://www.starburst.io/[Starburst,role='params-link',window='_blank'].
 
 image::openshift-ai-applications.png[OpenShift AI Applications]
 
@@ -37,13 +37,13 @@ image::openshift-ai-projects.png[OpenShift AI Projects]
 
 ### Data Science Pipelines
 
-This section is where you can create and manage your machine learning pipelines. These pipelines can be used to automate the end-to-end machine learning workflow, from data preparation to model training and deployment. Based on Kubeflow and Tekton, these pipelines are portable and scalable.
+This section is where you can create and manage your machine learning pipelines. These pipelines can be used to automate the end-to-end machine learning workflow, from data preparation to model training and deployment. Based on Kubeflow and Argo Workflows, these pipelines are portable and scalable.
 
 image::openshift-ai-pipelines.png[OpenShift AI Pipelines]
 
 ### Model Serving
 
-This area is where you can deploy and manage your machine learning models. Based on Knative, this serverless framework allows you to scale your models based on demand, and provides a consistent way to deploy and manage your models.
+This area is where you can deploy and manage your machine learning models. Based on Istio and Knative, this serverless framework allows you to scale your models based on demand, and provides a consistent way to deploy and manage your models.
 
 image::openshift-ai-model-serving.png[OpenShift AI Model Serving]
 
@@ -65,9 +65,9 @@ image::openshift-ai-project-overview.png[Select Data Science Project]
 
 ### Data Connections
 
-We've deployed an instance of Minio S3-compatible object storage on the cluster. We'll use Minio to store our data and create a connection to it in our project.
+We've deployed an instance of MinIO S3-compatible object storage on the cluster. We'll use MinIO to store our data and create a connection to it in our project.
 
-The data connection to Minio to store the models and the pipelines have been already created for you, and you can review it by clicking to the "Connections" tab.
+The data connection to MinIO to store the models and the pipelines have been already created for you, and you can review it by clicking to the "Connections" tab.
 
 image::openshift-ai-connections.png[Create Data Connection]
 
@@ -138,4 +138,4 @@ IMPORTANT: Don't forget to switch the branch!
 
 ## Summary
 
-We've successfully created a data science project, connected to Minio, configured a pipeline server, and created a workbench to run our Jupyter Notebooks. We've also cloned the project repository into our Jupyter Notebook environment. Let's move on to the next section to start learn about the model we'll be using for the Rock-Paper-Scissors game.
+We've successfully created a data science project, connected to MinIO, configured a pipeline server, and created a workbench to run our Jupyter Notebooks. We've also cloned the project repository into our Jupyter Notebook environment. Let's move on to the next section to start learn about the model we'll be using for the Rock-Paper-Scissors game.
