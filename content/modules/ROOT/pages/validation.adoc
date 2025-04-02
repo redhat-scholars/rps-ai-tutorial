@@ -16,12 +16,13 @@ KSERVE_URL = "https://yolo-rps-wksp-{user}.{openshift_cluster_ingress_domain}"
 MODEL_NAME = "yolo-rps"
 ----
 
-TIP: You find the inference API URL and the model name in the Model Serving section as discussed in the previous section:
+TIP: You can find the inference API URL and the model name in the *Model Serving* section, as explained earlier.
+
 image::openshift-ai-inferencing-model-2.png[Inferencing Model]
 
-Let's run the notebook to test the deployed model. Hit the *Play* button in the upper hand area of the notebook to run the cells, firstly, to install the required libraries and then to set some variables for the inference URL and model/input names.
-Then load the image and sent it usingan HTTP call to the model.
-Finally, shows the result of the image detecting the correct shape, where in the first version, we got it an error:
+Let's run the notebook to test the deployed model. Click the *Play* button in the top toolbar to execute the cells: first to install the required libraries, and then to set variables such as the inference URL and the model/input names.  
+Next, load the image and send it using an HTTP call to the model.  
+Finally, the notebook will display the result of the image, showing the detected hand shape. In the first version, this returned an error:
 
 image::openshift-ai-shape-v2.png[Jupyter Notebook Validation]
 
@@ -31,4 +32,7 @@ Yay! It works much better.
 
 ## Next Steps
 
-After running the notebook, you should see the model's prediction  hand gesture image. If the model correctly identifies the hand gestures, then the deployment is successful. In the next section, we'll deploy the game application using Argo CD and configure it to communicate with the model server for real-time hand gesture classification.
+After running the notebook, you should see the model's predicted hand gesture for the input image.  
+If the model correctly identifies the gestures, the deployment is successful.
+
+In the next section, we'll deploy the game application using Argo CD and configure it to communicate with the model server for real-time hand gesture classification.

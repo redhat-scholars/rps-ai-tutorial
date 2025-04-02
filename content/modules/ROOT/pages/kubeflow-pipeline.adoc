@@ -13,7 +13,7 @@ In this lab, you'll find the Kubeflow pipeline and components in the `roshambo-n
 * Pipeline: `training_pipeline.py`
 * Components: `fetch_data.py`, `train_model.py`, `evaluate_model.py`, `save_model.py`
 
-Open the `training_pipeline.py`.
+Open the `training_pipeline.py`:
 
 image::openshift-ai-jupyter-notebook-run3-pipeline1.png[Jupyter Notebook Pipeline]
 
@@ -40,7 +40,6 @@ image::openshift-ai-jupyter-notebook-run3-pipeline3.png[Jupyter Notebook Pipelin
 The KFP is now starting on the cluster and you can monitor the progress the dashboard.
 Go back to the  link:https://rhods-dashboard-redhat-ods-applications.{openshift_cluster_ingress_domain}[*OpenShift AI Dashboard*,role='params-link',window='_blank']. From the left-side menu, click to *Experiments* then *Experiments and runs*. From the list, you should see a *kfp-training* experiment running.
  
-
 image::openshift-ai-jupyter-notebook-run3-pipeline5.png[Jupyter Notebook Pipeline]
 
 Click to the Kubeflow pipeline to see all details.
@@ -52,6 +51,27 @@ You should see now the graphical representation of the pipeline with all the com
 Click to any of them to review status of logs. Note that the pipeline is running for a couple of minutes to finish.
 
 image::openshift-ai-jupyter-notebook-run3-pipeline7.png[Jupyter Notebook Pipeline]
+
+If you click the *Evaluate* component, you will see the evaluation metrics such as *Precision* and *Recall*.
+
+image::openshift-ai-jupyter-notebook-run3-pipeline11.png[Jupyter Notebook Pipeline]
+
+Once you click the *Metrics* button below *Evaluate*, navigate to the *Visualization* tab. There, you'll find scalar metrics related to model performance after evaluation, such as *mAP50*, *mAP75*, *mAP*, as well as *Precision* and *Recall*.
+
+image::openshift-ai-jupyter-notebook-run3-pipeline12.png[Jupyter Notebook Pipeline]
+
+The *mAP* (mean Average Precision) is a standard metric used in object detection tasks. It summarizes the precision-recall curve into a single value, providing a comprehensive measure of the model’s accuracy across different IoU (Intersection over Union) thresholds.
+
+In addition to object detection metrics, you can also review *Classification Metrics* after the evaluation step.
+
+image::openshift-ai-jupyter-notebook-run3-pipeline13.png[Jupyter Notebook Pipeline]
+
+Click the *Classification Metrics* button to access these results. You will see the *Confusion Matrix*, which is a table used to evaluate the performance of a classification model on a test dataset with known target values.
+
+The *Confusion Matrix* compares the actual target values with the predictions made by the model. It provides insights not only into the number of errors but also the types of errors the classifier makes.
+
+image::openshift-ai-jupyter-notebook-run3-pipeline14.png[Jupyter Notebook Pipeline]
+
 
 After the Kubeflow pipeline successful run, the new model has been pushed to the Model Registry that you can review.
 

@@ -35,7 +35,7 @@ image::openshift-ai-jupyter-notebook-validation.png[Jupyter Notebook Validation]
 Here's a bit about the technical details of the model development process.
 
 * Start from a pretrained model from YOLOv11s.
-* Train the model with additional datasets of rock,paper,scissors and use 1 epoch as an example of training.
+* Train the model with additional datasets of rock, paper, scissors and use 1 epoch as an example of training.
 * Load and verify the model from local filesystem.
 * Export the model to the ONNX format, ready to be uploaded to storage and served as an inference API.
 
@@ -51,13 +51,13 @@ image::openshift-ai-jupyter-notebook-run1-test.png[Jupyter Notebook Run]
 
 Now that we have the model exported into an open and standard format such as ONNX, we can save it outside the local filesystem. Generally, an S3-compatible storage is ideal for storing AI models as they could be very large files and the protocol also supports well high availability.
 
-In this section you'll learn use link:https://min.io/[Minio] as a storage and link:https://www.kubeflow.org/docs/components/model-registry/overview/[Kubeflow Model Registry,window='_blank'] as a registry for the model.
+In this section you'll learn use link:https://min.io/[MinIO] as a storage and link:https://www.kubeflow.org/docs/components/model-registry/overview/[Kubeflow Model Registry,window='_blank'] as a registry for the model.
 
-A model registry provides a central index for ML model developers to index and manage models, versions, and ML artifacts metadata. It helps with all the lifecycle of the model.
+A Model Registry provides a central index for ML model developers to index and manage models, versions, and ML artifacts metadata. It helps with all the lifecycle of the model.
 
 You can now open the `2-yolo-rps-save-model.ipynb` notebook and start experimenting with model lifecycle management for your app.
 
-NOTE: Some setting such as the notebook connection to Minio has been automatically configured for you in order to make the flow easier, however you will be asked to change a placeholder user with your own username in some part of the notebook
+NOTE: Some setting such as the notebook connection to MinIO has been automatically configured for you in order to make the flow easier, however you will be asked to change a placeholder user with your own username in some part of the notebook
 
 [source,python,role="copypaste",subs=attributes+]
 ----
@@ -69,6 +69,8 @@ print(model_path_s3)
 ----
 
 image::openshift-ai-jupyter-notebook-run2-user.png[Jupyter Notebook Change User]
+
+NOTE: Make sure that you put your {user} before running the cell of the notebook.
 
 Update the following model registry configuration.
 
@@ -90,7 +92,7 @@ registry = ModelRegistry(
 )
 ----
 
-It should look like this in Notebook.
+It should look like this in Notebook:
 
 image::openshift-ai-jupyter-notebook-run2-domain.png[Jupyter Notebook Change Domain]
 

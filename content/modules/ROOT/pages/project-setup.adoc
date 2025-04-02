@@ -4,7 +4,7 @@
 :imagesdir: ../assets/images
 :sectnums:
 
-Let's kick off this workshop by accessing our instance of OpenShift AI and creating a new *Data Science Project*. This is a logical grouping that will contain all the assets related to our data science work, such as notebooks, data connections, model serving, and more, all in one place. Let's setup our project and start exploring the capabilities of OpenShift AI!
+Let's begin this workshop by accessing our OpenShift AI instance and creating a new *Data Science Project*. This project will serve as a central workspace containing all assets related to your data science work—such as notebooks, data connections, model deployments, and more. Let’s get started and explore what OpenShift AI has to offer!
 
 TIP: These technologies are based on open-source projects that Red Hat contributes to, such as link:https://jupyter.org/[Jupyter] for notebooks, link:https://www.kubeflow.org/[Kubeflow] for machine learning pipelines, and link:https://www.knative.dev/[Knative] for serverless model serving, just to name a few!
 
