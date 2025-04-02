@@ -209,7 +209,7 @@ spec:
 
 ## Next Steps
 
-Now that we have deployed the V2 RoShambo game model using the Model Server in OpenShift AI, we can integrate it with the game application to enable AI-powered gameplay. In the next section, we'll test in the Jupyter notebook the inferencing endpoint by querying the model with sample input data and verifying the predictions.
+Now that we have deployed the v2 RoShambo game model using the Model Server in OpenShift AI with Argo CD, we can integrate it with the game application to enable AI-powered gameplay. In the next section, we'll test in the Jupyter notebook the inferencing endpoint by querying the model with sample input data and verifying the predictions.
 
 
 
