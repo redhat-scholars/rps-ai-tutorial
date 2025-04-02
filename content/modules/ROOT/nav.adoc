@@ -12,14 +12,14 @@
 ** xref:index.adoc[Intro] 
 ** xref:setup.adoc[Environment Setup]
 
-* Model Testing & Deployment
+* Model Testing and Automation
 ** xref:project-setup.adoc[AI Setup] 
 ** xref:jupyter.adoc[Jupyter Notebook]
 ** xref:kubeflow-pipeline.adoc[Kubeflow Pipeline]
-** xref:model-serving.adoc[Model Serving]
-** xref:validation.adoc[Model Validation]
 
-* Deploying with GitOps
+* Model Serving and App Deploying with GitOps
+** xref:argocd-model.adoc[Deploying the Model]
+** xref:validation.adoc[Model Validation]
 ** xref:argocd-proxy.adoc[Deploying the AI Service]
 ** xref:argocd-game.adoc[Deploying the Game]
 
