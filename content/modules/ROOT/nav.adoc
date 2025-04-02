@@ -17,9 +17,11 @@
 ** xref:jupyter.adoc[Jupyter Notebook]
 ** xref:kubeflow-pipeline.adoc[Kubeflow Pipeline]
 
-* Model Serving and App Deploying with GitOps
+* Model Serving with GitOps
 ** xref:argocd-model.adoc[Deploying the Model]
 ** xref:validation.adoc[Model Validation]
+
+* App Deploying with GitOps 
 ** xref:argocd-proxy.adoc[Deploying the AI Service]
 ** xref:argocd-game.adoc[Deploying the Game]
 
