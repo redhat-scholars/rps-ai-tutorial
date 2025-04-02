@@ -36,7 +36,7 @@ TIP: Argo CD provides a web interface and a command-line interface (CLI) for man
 
 Next, we'll create an Argo CD Application to deploy the AI model with KServe and OpenVINO Model Server. 
 
-The model comes with an Helm chart with two KServe objects: _ServingRuntime_ and _InferenceService_
+For this purpose, we created an Helm chart to deploy the model with two KServe objects: _ServingRuntime_ and _InferenceService_
 
 Those will point to the v2 model trained and pushed to the Model Registry by the Kubeflow pipeline as we discussed in the previous chapter.
 
