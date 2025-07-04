@@ -19,7 +19,7 @@ image::argocd-multiplayer-enabled.png[Multiplayer Enabled]
 The backend is re-deployed and the app is now supporting multiplayer mode. Give the frontend URL to your users and start the game from the backend.
 
 
-## Accessing the Game at KubeCon EU 2025
+## Accessing the Game at this event
 
 NOTE: Swag may be awarded to the best player!
 
@@ -29,7 +29,7 @@ We'll be using an instance of the game, and model, hosted on the cluster(s).
 
 To access the game from your laptop, you'll need to use this following URL:
 
-link:https://bit.ly/rps-kubecon25[*RoShambo Multiplayer Link*,role='params-link',window='_blank'].
+link:https://red.ht/rps-ai-lab[*RoShambo Multiplayer Link*,role='params-link',window='_blank'].
 
 image::ai-game-multiplayer.png[AI Game Camera Result]
 
