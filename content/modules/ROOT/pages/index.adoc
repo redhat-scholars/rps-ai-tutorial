@@ -2,11 +2,11 @@
 :imagesdir: ../assets/images
 :sectnums:
 
-Welcome to the *Tutorial: Rock, Paper, Scissors! Build an AI-powered Interactive Game With Argo CD and Kubeflow*. We're glad to have you here with us at https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/[*KubeCon and CloudNativeCon Europe 2025*]!
+Welcome to the *Tutorial: Rock, Paper, Scissors! Build an AI-powered Interactive Game With Argo CD and Kubeflow*. We're glad to have you here with us at this event!
 
 ## About this lab
 
-This tutorial provides you with a shared *Kubernetes cluster* and a series of exercises that teach you how to use Kubeflow and Argo CD for an AI-powered interactive game called RoShambo. You will learn how to use link:https://www.kubeflow.org/[*Kubeflow*,window='_blank'] to automate model construction through data science pipelines and deploy models via the model server. You will also learn how to use link:https://argo-cd.readthedocs.io/en/stable/[*Argo CDs*,window='_blank'] to handle the deployment of models and applications using GitOps principles. 
+This tutorial provides you with a shared *OpenShift cluster* and a series of exercises that teach you how to use Kubeflow and Argo CD for an AI-powered interactive game called RoShambo. You will learn how to use link:https://www.kubeflow.org/[*Kubeflow*,window='_blank'] to automate model construction through data science pipelines and deploy models via the model server. You will also learn how to use link:https://argo-cd.readthedocs.io/en/stable/[*Argo CDs*,window='_blank'] to handle the deployment of models and applications using GitOps principles. 
 
 We'll be deploying a multi-component application which includes a frontend built with link:https://reactjs.org[*React*,window='_blank'], a backend using link:https://quarkus.io[*Quarkus*,window='_blank'], and an AI model built and trained with link:https://pytorch.org[*PyTorch*,window='_blank'].
 
