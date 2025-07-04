@@ -1,6 +1,6 @@
 ---
 site:
-  title: KubeCon EU 2025
+  title: Rock, Paper, Scissors AI Lab
   # url: https://redhat-scholars.github.io/course-template
   start_page: modules::index.adoc
 
